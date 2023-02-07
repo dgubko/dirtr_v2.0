@@ -7,7 +7,9 @@ function Header() {
     <div className='Header'>
         <div className='banner'>
               <div className='title-border'>
-                <h1 className='title'>Dirtr</h1>
+                <NavLink to='/'>
+                    <h1 className='title'>Dirt<span className='title-r'>r</span></h1>
+                </NavLink>
               </div>
             </div>
     </div>

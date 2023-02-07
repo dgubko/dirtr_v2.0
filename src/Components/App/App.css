@@ -2,6 +2,11 @@
   text-align: center;
   background-color:#fffff8;
   margin: 0;
+  font-family: "Kanit"
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
 }
 
 /* .App-logo {
