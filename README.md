@@ -1,71 +1,73 @@
-# Getting Started with Create React App
+# Dirtr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract
+  - Dirtr is an application which simulates users, allows you to take control of a user account, and utilize an app to find/favorite offroading trails in Colorado. This project is our final group project at Turing, working alongside backenders to make a truly from-scratch full-stack app. This is purely the Front End repo.
 
-## Available Scripts
+## Technologies
+- ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+- ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+- ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+- Cypress
+- ![CircleCI](https://img.shields.io/badge/circleci-343434?style=for-the-badge&logo=circleci&logoColor=white)
 
-In the project directory, you can run:
+## Features
+- Choose from a list of pre-made users
+- User can view all trails, as well as trails already on their favorites
+- User can add and remove any trail from their favorites list
 
-### `npm start`
+## Possible Future Extensions
+- Incorporate React Native
+- Include ability to make a new account
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Learning Goals
+- Work on a fullstack team
+- Learn from the Back End: what do they handle? What info do they need from us? What info do we need from them?
+- Independently learn and integrate Redux into the app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### Visual Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(Visual Demo will go here when complete!)
 
-### `npm run build`
+### Set Up
+1. Clone the repo
+   ```sh
+   git clone git@github.com:DirtR2208/dirtr2208_fe.git
+   ```
+2. Install NPM packages and start server
+   ```sh
+   npm install
+   npm start
+   ``` 
+3. Clone the API from the repo 
+   ```sh
+   git clone (????)
+   ```
+4. CD into the API directory and start the local server
+   ```sh
+   (?????)
+   ```
+5. Explore the website
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Sources
+  - [MDN](http://developer.mozilla.org/en-US/)
+  - [Codecademy](https://www.codecademy.com/learn/learn-redux)
+  - [Redux Docs](https://redux.js.org/)
+  - [YouTube](https://www.youtube.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Front End Contributors
+  - [Dmitrii Gubko](https://github.com/dgubko/dgubko)
+  - [Dana Truong](https://github.com/tramtram1130)
+  - [Evan Swanson](https://github.com/EvanSSwanson)
+  
+  ## Back End Contributors
+  - [Kenz Leng](https://github.com/kenzjoy)
+  - [Alex Mora](https://github.com/AlexMR-93)
+  - [Eli Fuchsman](https://github.com/efuchsman)
+  - [Shawn Lee](https://github.com/Shawnl93)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-end
+## Project Outline
+  - The project outline can be found [here](https://mod4.turing.edu/projects/capstone/)
