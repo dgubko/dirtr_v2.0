@@ -1,0 +1,43 @@
+.individual-trail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.trail-details-container {
+  width: 35vw;
+  border: 1px solid black;
+  margin-right: 2vw;
+  padding: 1vw;
+}
+
+.trail-name-button-styling {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trail-name-button-styling > h2 {
+  font-size: 1.7rem;
+}
+
+.trail-name-button-styling > button {
+  width: 3vw;
+  height: 5vh;
+  font-size: 1.6rem;
+}
+
+.trail-addl-detail-styling {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+}
+
+.trail-overview-title {
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.trail-overview-description {
+  text-align: left;
+}
