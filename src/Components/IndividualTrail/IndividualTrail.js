@@ -21,6 +21,7 @@ function IndividualTrail() {
             <h2 className='trail-overview-title'>Overview</h2>
             <p className='trail-overview-description'>Kinda lengthy, but not too lengthy. Kinda easy, but not too easy. Ramble ramble ramble.</p>
           </div>
+          <button className='return-home-button'>Return Home</button>
         </div>
         <div className='trail-map-container'>
           <img width='500' src='https://i0.wp.com/www.naturetrailsnc.com/wp-content/uploads/Screen_Shot_2019-02-11_at_11.10.23_PM-bb.jpg?ssl=1' />
