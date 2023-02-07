@@ -1,8 +1,15 @@
 .App {
   text-align: center;
+  background-color:#fffff8;
+  margin: 0;
+  font-family: "Kanit"
 }
 
-.App-logo {
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +42,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

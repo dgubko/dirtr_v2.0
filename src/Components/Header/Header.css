@@ -1,0 +1,36 @@
+.Header {
+    display: flex;
+    font-family: "Changa One"
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    background-color: #5e2222;
+    height: 9vw;
+    width: 100vw;
+}
+
+.title {
+    color: #ffffff;
+    margin-left: 3vw;
+    font-size: 6vw;
+}
+
+.title-r {
+    color:#f18b1c;
+}
+
+.title:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all ease-in-out .3s;
+    -webkit-text-stroke: .008vw #f18b1c;
+}
+
+.title:hover > .title-r, .title-r:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all ease-in-out .3s;
+    -webkit-text-stroke: .008vw #ffffff;
+}
