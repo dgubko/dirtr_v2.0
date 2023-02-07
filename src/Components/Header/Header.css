@@ -1,0 +1,13 @@
+.Header {
+    display: flex;
+}
+
+.banner {
+    display: flex;
+    background-color: #5e2222;
+    width: 100vw;
+}
+
+.title {
+    margin-left: 3vw;
+}
