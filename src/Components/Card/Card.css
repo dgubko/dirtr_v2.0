@@ -1,0 +1,30 @@
+.card {
+  width: fit-content;
+  height: 15vh;
+  border: 1px black solid;
+  margin: 1.5vw;
+}
+
+.image-button-container {
+  display: flex;
+}
+
+.image-button-container>img {
+  width: 24vw;
+}
+
+.image-button-container>button {
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+}
+
+.trail-name, .county-name {
+  text-align: left;
+}
+
+.distance-difficulty-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

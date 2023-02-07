@@ -1,0 +1,9 @@
+.saved-trails {
+  display: flex;
+  flex-direction: column;
+}
+
+.saved-trails-card-container {
+  display: flex;
+  align-self: center;
+}
