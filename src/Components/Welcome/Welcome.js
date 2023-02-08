@@ -1,5 +1,5 @@
 import "./Welcome.css";
-import welcome from "../../images/mainpic.png";
+import welcome from "../../assets/images/mainpic.png";
 
 export function Welcome() {
   return (
@@ -10,3 +10,5 @@ export function Welcome() {
     </div>
   );
 }
+
+export default Welcome
