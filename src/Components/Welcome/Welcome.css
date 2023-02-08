@@ -1,0 +1,38 @@
+.welcome-main {
+  height: calc(100vh - 68px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding-bottom: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-main img {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  z-index: 0;
+}
+
+.welcome-message {
+  font-size: 4rem;
+  color: white;
+  z-index: 2;
+}
+
+.button-welcome {
+  color: black;
+  background-color: #f18b1c;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 8px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.button-welcome:hover {
+  background-color: #c87216;
+}

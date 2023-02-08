@@ -1,11 +1,15 @@
 .App {
   text-align: center;
-  background-color:#fffff8;
+  background-color: #fffff8;
   margin: 0;
-  font-family: "Kanit"
+  font-family: "Kanit";
+  min-height: 100vh;
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link,
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
 }
 
