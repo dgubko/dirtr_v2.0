@@ -3,6 +3,7 @@ import { Route, Routes, NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { increment, decrement } from '../../actions'
 import Header from '../../Components/Header/Header'
+import IndividualTrail from '../../Components/IndividualTrail/IndividualTrail'
 
 function App() {
   const counter = useSelector(state => state.counter)
@@ -14,6 +15,7 @@ function App() {
       <h1 className='counter'>Counter: {counter}</h1>
       <button className='+' onClick={() => dispatch(increment(1))}>+</button>
       <button className='-' onClick={() => dispatch(decrement(1))}>-</button>
+      {/* <IndividualTrail/> */}
     </div>
   );
 }
