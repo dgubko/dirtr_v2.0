@@ -1,21 +1,23 @@
-import React from 'react'
-import './Card.css'
+import React from "react";
+import "./Card.css";
 
-function Card() {
+function Card(props) {
   return (
-    <div className='card'>
-      <div className='image-button-container'>
-        <img src='https://a.cdn-hotels.com/gdcs/production38/d1782/61e19798-aa84-4cbe-98b4-12e8936c8979.jpg?impolicy=fcrop&w=1600&h=1066&q=medium' />
+    <div className="card">
+      <div className="image-button-container">
+        <img src={props.image} />
+      </div>
+      <div className="card-info">
+        <p className="trail-difficulty">{props.difficulty}</p>
+        <p className="trail-name">{props.name}</p>
+        <p className="county-name">{props.county}</p>{" "}
+        <p className="trail-distance">{props.distance} miles</p>
+      </div>
+      <div className="distance-difficulty-container">
         <button>❤️</button>
       </div>
-      <p className='trail-name'>Scenic Trail</p>
-      <p className='county-name'>Random County</p>
-      <div className='distance-difficulty-container'>
-        <p className='trail-distance'>4 miles</p>
-        <p className='trail-difficulty'>Difficult</p>
-      </div>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;
