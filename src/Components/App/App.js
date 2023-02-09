@@ -1,15 +1,18 @@
-import "./App.css";
-import { Route, Routes, NavLink } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../../actions";
-import Header from "../../Components/Header/Header";
-import { Welcome } from "../Welcome/Welcome";
-import { AllTrails } from "../AllTrails/AllTrails";
+import "./App.css"
+import { Route, Routes, NavLink } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { increment, decrement } from "../../actions"
+import Header from "../../Components/Header/Header"
+import Welcome from "../Welcome/Welcome"
+import AboutUs from "../AboutUs/AboutUs"
+import SavedTrails from "../SavedTrails/SavedTrails"
+import IndividualTrail from "../IndividualTrail/IndividualTrail"
+import AllTrails from "../AllTrails/AllTrails";
 import { Form } from "react-router-dom";
 
 function App() {
-  const counter = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counter)
+  const dispatch = useDispatch()
 
   return (
     <div className="App">
@@ -21,13 +24,16 @@ function App() {
       <button className="-" onClick={() => dispatch(decrement(1))}>
         -
       </button> */}
-
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/trails" element={<AllTrails />} />
       </Routes>
+      {/* <Welcome /> */}
+      {/* <AboutUs /> */}
+      {/* <IndividualTrail /> */}
+      {/* <SavedTrails /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
