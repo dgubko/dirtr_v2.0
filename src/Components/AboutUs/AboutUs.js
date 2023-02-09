@@ -10,23 +10,23 @@ function AboutUs() {
       <div className='about-us-container'>
         <div>
           <p className='bio-text'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue eu consequat ac felis donec et. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Aliquet nec ullamcorper sit amet. Dui vivamus arcu felis bibendum ut tristique et egestas quis.
+          At Dirtr, our mission is to deliver a comprehensive and current resource for off-road trails throughout the greater Denver area. Time is precious and we will gather your trail intel so that you can get out there. Adventure awaits.
           </p>
           <div className='team-container'>
             <h2>Our team</h2>
             <div className='fe-team-container'>
               <nav>
-                <a href={GITHUB_ROUTES.DANA}>Dana Truong</a> |
-                <a href={GITHUB_ROUTES.EVAN}>Evan Swanson</a> |
-                <a href={GITHUB_ROUTES.DMITRII}>Dmitrii Gubko</a>
+                <a href={GITHUB_ROUTES.DANA}><u>Dana Truong</u> | </a>
+                <a href={GITHUB_ROUTES.EVAN}><u>Evan Swanson</u> | </a>
+                <a href={GITHUB_ROUTES.DMITRII}><u>Dmitrii Gubko</u></a>
               </nav>
             </div>
             <div className='be-team-container'>
               <nav>
-                <a href={GITHUB_ROUTES.KENZ}>Kenz Leng</a> |
-                <a href={GITHUB_ROUTES.ELI}>Eli Fuchsman</a> |
-                <a href={GITHUB_ROUTES.SHAWN}>Shawn Lee</a> |
-                <a href={GITHUB_ROUTES.ALEX}>Alex Mora</a>
+                <a href={GITHUB_ROUTES.KENZ}><u>Kenz Leng</u> | </a>
+                <a href={GITHUB_ROUTES.ELI}><u>Eli Fuchsman</u> | </a>
+                <a href={GITHUB_ROUTES.SHAWN}><u>Shawn Lee</u> | </a>
+                <a href={GITHUB_ROUTES.ALEX}><u>Alex Mora</u></a>
               </nav>
             </div>
           </div>

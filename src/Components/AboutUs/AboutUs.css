@@ -6,6 +6,18 @@
   display: flex;
 }
 
+.bio-text {
+  font-size: 1.8rem;
+}
+
+.team-container {
+  font-size: 1.2rem;
+}
+
 .image-container > img {
   width: 35vw;
+}
+
+.team-container > h2 {
+  font-size: 2rem;
 }
