@@ -23,7 +23,7 @@ function App() {
         -
       </button> */}
       {/* <Welcome /> */}
-      <AboutUs />
+      {/* <AboutUs /> */}
       {/* <IndividualTrail /> */}
       {/* <SavedTrails /> */}
     </div>
