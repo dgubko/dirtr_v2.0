@@ -1,25 +1,29 @@
 .card {
   width: fit-content;
   height: 15vh;
-  border: 1px black solid;
+  border: 3px solid #cdcdcd;
+  border-radius: 8px;
   margin: 1.5vw;
+  display: flex;
 }
 
 .image-button-container {
   display: flex;
 }
 
-.image-button-container>img {
-  width: 24vw;
+.image-button-container > img {
+  height: auto;
+  width: auto;
 }
 
-.image-button-container>button {
+.image-button-container > button {
   width: 4vw;
   height: 4vw;
   position: absolute;
 }
 
-.trail-name, .county-name {
+.trail-name,
+.county-name {
   text-align: left;
 }
 
