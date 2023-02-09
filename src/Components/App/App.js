@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../actions";
 import Header from "../../Components/Header/Header";
 import { Welcome } from "../Welcome/Welcome";
+import { AllTrails } from "../AllTrails/AllTrails";
+import { Form } from "react-router-dom";
 
 function App() {
   const counter = useSelector((state) => state.counter);
@@ -19,7 +21,11 @@ function App() {
       <button className="-" onClick={() => dispatch(decrement(1))}>
         -
       </button> */}
-      <Welcome />
+
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/trails" element={<AllTrails />} />
+      </Routes>
     </div>
   );
 }
