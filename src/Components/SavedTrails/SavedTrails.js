@@ -5,7 +5,7 @@ import Card from '../Card/Card'
 function SavedTrails() {
   return (
     <div className='saved-trails'>
-      <h2 className='saved-trails-title'>Saved Trails</h2>
+      <h2 className='saved-trails-title'>Saved Trails View</h2>
       <div className='saved-trails-card-container'>
         <Card />
         <Card />
