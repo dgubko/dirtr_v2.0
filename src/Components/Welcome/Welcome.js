@@ -1,12 +1,15 @@
 import "./Welcome.css";
-import welcome from "../../assets/images/mainpic.png";
+import { NavLink } from 'react-router-dom'
 
-export function Welcome() {
+const Welcome = () => {
   return (
     <div className="welcome-main">
-      <img src={welcome} />
       <h1 className="welcome-message">FIND YOUR PERFECT OFFROAD TRAIL</h1>
-      <button className="button-welcome">FIND YOUR TRAIL ▶︎</button>
+        <NavLink to="/trails">
+          <button className="button-welcome">
+            FIND YOUR TRAIL ▶︎
+          </button>
+        </NavLink>
     </div>
   );
 }

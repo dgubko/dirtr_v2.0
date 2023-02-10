@@ -5,7 +5,7 @@ import mocktrails from "../../mock-data/alltrails.json";
 import Card from "../Card/Card";
 import { Form } from "../Form/Form";
 
-export const AllTrails = () => {
+const AllTrails = () => {
   const [trails, setTrails] = useState([]);
   const [county, setCounty] = useState("");
 

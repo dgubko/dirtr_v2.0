@@ -9,13 +9,10 @@
   padding-bottom: 200px;
   position: relative;
   overflow: hidden;
-}
-
-.welcome-main img {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  z-index: 0;
+  background-image: url("../../assets/images/mainpic.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .welcome-message {

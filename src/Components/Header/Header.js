@@ -2,7 +2,7 @@ import './Header.css';
 import { Route, Routes, NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-function Header() {
+const Header = () => {
   return (
     <div className='Header'>
         <div className='banner'>
