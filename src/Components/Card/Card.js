@@ -6,15 +6,18 @@ function Card(props) {
     <div className="card">
       <div className="image-button-container">
         <img src={props.image} className="scenery-image"/>
+        <div className="trail-county-container">
+          <p className="trail-name">{props.name}</p>
+          <div className="divider-bar"></div>
+          <p className="county-name">{props.county}</p>
+        </div>
       </div>
       <div className="card-info">
         <p className="trail-difficulty">{props.difficulty}</p>
-        <p className="trail-name">{props.name}</p>
-        <p className="county-name">{props.county}</p>{" "}
         <p className="trail-distance">{props.distance} miles</p>
-      </div>
-      <div className="distance-difficulty-container">
-        <button>❤️</button>
+        <button className="favorite-button">
+          <div className="heart-image-container" />
+        </button>
       </div>
     </div>
   );

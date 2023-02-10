@@ -1,34 +1,91 @@
 .card {
-  width: fit-content;
-  height: 15vh;
-  border: 3px solid #cdcdcd;
-  border-radius: 8px;
+  width: 25vw;
+  height: 14vw;
   margin: 1.5vw;
   display: flex;
+  flex-direction: column;
+  font-size: 1.4vw;
+  cursor: default;
 }
 
 .image-button-container {
   display: flex;
+  border-top: .21vw solid #cdcdcd;
+  border-right: .21vw solid #cdcdcd;
+  border-left: .21vw solid #cdcdcd;
+  border-top-left-radius: .7vw;
+  border-top-right-radius: .7vw;
+  background-color: #fffff8;
+  cursor: pointer;
 }
 
-.image-button-container > img {
-  height: auto;
-  width: auto;
+.image-button-container:hover {
+  border-top: .21vw solid #f18b1c;
+  border-right: .21vw solid #f18b1c;
+  border-left: .21vw solid #f18b1c;
 }
 
-.image-button-container > button {
-  width: 4vw;
-  height: 4vw;
-  position: absolute;
+.image-button-container:hover > .trail-county-container {
+  transform: scale(1.1);
+  transition: all ease-in-out 0.3s;
+}  
+
+.scenery-image {
+  height: 10vw;
+  width: 12.5vw;
+  border-top-left-radius: .7vw;;
 }
 
-.trail-name,
-.county-name {
-  text-align: left;
-}
-
-.distance-difficulty-container {
+.trail-county-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
+  width: 12.5vw;
+  font-size: 1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.divider-bar {
+  background-color: #cdcdcd;
+  height: .1vw;
+  margin-left: .1vw;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4vw;
+  color:#ffffff;
+  background-color:#5e2222;
+  border-bottom-left-radius: .7vw;
+  border-bottom-right-radius: .7vw;
+}
+
+.favorite-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#f18b1c;
+  height: 3vw;
+  width: 3vw;
+  border: none;
+  border-radius: 5vw;
+  pointer-events: auto;
+}
+
+.favorite-button:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: all ease-in-out 0.3s;
+}
+
+.heart-image-container {
+  height: 2vw;
+  width: 2vw;
+  background-image: url("../../assets/images/icons8-favorite-90.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
