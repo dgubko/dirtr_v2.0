@@ -5,7 +5,7 @@ function Card(props) {
   return (
     <div className="card">
       <div className="image-button-container">
-        <img src={props.image} />
+        <img src={props.image} className="scenery-image"/>
       </div>
       <div className="card-info">
         <p className="trail-difficulty">{props.difficulty}</p>

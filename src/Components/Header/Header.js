@@ -6,11 +6,14 @@ const Header = () => {
   return (
     <div className='Header'>
         <div className='banner'>
-              <div className='title-border'>
+
                 <NavLink to='/'>
                     <h1 className='title'>Dirt<span className='title-r'>r</span></h1>
                 </NavLink>
-              </div>
+                <NavLink to='/about'>
+                    <h1 className='about-button'>About</h1>
+                </NavLink>
+
             </div>
     </div>
   );
