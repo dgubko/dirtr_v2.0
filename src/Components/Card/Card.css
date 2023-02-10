@@ -8,8 +8,9 @@
   cursor: default;
 }
 
-.image-button-container {
+.card-top {
   display: flex;
+  color: #000000;
   border-top: .21vw solid #cdcdcd;
   border-right: .21vw solid #cdcdcd;
   border-left: .21vw solid #cdcdcd;
@@ -19,13 +20,13 @@
   cursor: pointer;
 }
 
-.image-button-container:hover {
+.card-top:hover {
   border-top: .21vw solid #f18b1c;
   border-right: .21vw solid #f18b1c;
   border-left: .21vw solid #f18b1c;
 }
 
-.image-button-container:hover > .trail-county-container {
+.card-top:hover > .trail-county-container {
   transform: scale(1.1);
   transition: all ease-in-out 0.3s;
 }  
@@ -52,7 +53,7 @@
   margin-left: .1vw;
 }
 
-.card-info {
+.card-bottom {
   display: flex;
   justify-content: space-around;
   align-items: center;
