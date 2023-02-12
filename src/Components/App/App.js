@@ -1,7 +1,8 @@
 import "./App.css"
+import React, { useEffect, useState } from "react"
 import { Route, Routes, NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import { increment, decrement } from "../../actions"
+import { assignUsers, assignTrails } from "../../actions"
 import Header from "../Header/Header"
 import Welcome from "../Welcome/Welcome"
 import AboutUs from "../AboutUs/AboutUs"
@@ -11,9 +12,31 @@ import AllTrails from "../AllTrails/AllTrails";
 import Login from "../Login/Login"
 import { Form } from "react-router-dom";
 
-function App() {
+const App = () => {
   const counter = useSelector((state) => state.counter)
   const dispatch = useDispatch()
+
+  const getData = (url) => {
+    return fetch(url, {
+    })
+      .then(response => response.json())
+      .catch(err => console.log(err))
+  }
+
+  const instantiateData = () => {
+    Promise.all([
+      getData('http://localhost:3000/api/v1/users'),
+      getData('http://localhost:3000/api/v1/trails')
+    ]).then(data => {
+        dispatch(assignUsers(data[0]))
+        dispatch(assignTrails(data[1]))
+        // loadUser();
+    });
+  };
+
+  useEffect(() => {
+    instantiateData();
+  }, []);
 
   return (
     <div className="App">
