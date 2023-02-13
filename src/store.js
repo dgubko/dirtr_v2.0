@@ -2,7 +2,6 @@ import { createStore } from 'redux'
 import rootReducer from './reducers'
 
 const defaultState = {
-  counter: 0,
   isLogged: false,
   users: [],
   trails: {},

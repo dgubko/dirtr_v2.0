@@ -13,7 +13,7 @@ import Login from "../Login/Login"
 import { Form } from "react-router-dom";
 
 const App = () => {
-  const counter = useSelector((state) => state.counter)
+  const users = useSelector((state) => state.users)
   const dispatch = useDispatch()
 
   const getData = (url) => {
