@@ -11,26 +11,20 @@ import IndividualTrail from "../IndividualTrail/IndividualTrail"
 import AllTrails from "../AllTrails/AllTrails";
 import Login from "../Login/Login"
 import { Form } from "react-router-dom";
+import getData from '../../utilis/apiCalls'
 
 const App = () => {
   const users = useSelector((state) => state.users)
   const dispatch = useDispatch()
 
-  const getData = (url) => {
-    return fetch(url, {
-    })
-      .then(response => response.json())
-      .catch(err => console.log(err))
-  }
-
   const instantiateData = () => {
     Promise.all([
       getData('http://localhost:3000/api/v1/users'),
       getData('http://localhost:3000/api/v1/trails')
+      //we'll need to set up environment variables here once the BE is deployed.
     ]).then(data => {
         dispatch(assignUsers(data[0]))
         dispatch(assignTrails(data[1]))
-        // loadUser();
     });
   };
 

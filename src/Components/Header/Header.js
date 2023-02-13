@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const Header = () => {
   const loginBoolean = useSelector((state) => state.isLogged)
-  if(loginBoolean === true) {
+  if(loginBoolean) {
     return (
       <div className='Header'>
           <div className='banner'>
@@ -18,7 +18,7 @@ const Header = () => {
       </div>
     );
   }
-  if(loginBoolean === false) {
+  if(!loginBoolean) {
     return (
       <div className='Header'>
           <div className='login-banner'>

@@ -5,6 +5,7 @@ import { logToggle, setUser } from "../../actions"
 import localUsers from '../../localUsers'
 
 const Login = () => {
+  const loginBoolean = useSelector((state) => state.isLogged)
 const users = useSelector((state) => state.users.data)
 const selectedUser = useSelector((state) => state.selectedUser.data)
 const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const userButtons = localUsers.map(user => {
   )
 })
 
-const getData = (id) => {
+const getUser = (id) => {
   return fetch('http://localhost:3000/api/v1/user?id=' + id, {
   })
     .then(response => response.json())
@@ -25,15 +26,20 @@ const getData = (id) => {
 }
 
 const selectAccount = (id) => {
-  getData(id)
+  getUser(id)
   dispatch(logToggle())
 }
+
+const enterButton = (<NavLink to='/home'>
+  <button className='enter-button'>Log In</button>
+  </NavLink>)
   return (
     <div className='Login'>
         <h1 className='login-message'>Choose an account:</h1>
         <div className='account-button-container'>
           {userButtons}
         </div>
+        {loginBoolean ? enterButton : ''}
     </div>
   );
 }

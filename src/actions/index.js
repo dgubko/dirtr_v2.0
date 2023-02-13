@@ -21,3 +21,9 @@ export const setUser = data => {
         payload: data
     }
 };
+export const setTrail = data => {
+    return{
+        type: 'SET_TRAIL',
+        payload: data
+    }
+};
