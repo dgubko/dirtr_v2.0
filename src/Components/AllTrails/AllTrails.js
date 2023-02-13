@@ -5,15 +5,19 @@ import mocktrails from "../../mock-data/alltrails.json";
 import Card from "../Card/Card";
 import { Form } from "../Form/Form";
 import { useSearchParams } from "react-router-dom";
+import { getAllTrails } from "../../apiCalls/getAllTrails";
+import { cleanTrails } from "../../utilities/cleanTrails";
 
 const AllTrails = () => {
   const [trails, setTrails] = useState([]);
   const [county, setCounty] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const currentParams = Object.fromEntries([...searchParams]);
-  const getAllTrails = (mocktrails) => {
-    setTrails(mocktrails.data.attributes.trails);
-    setCounty(mocktrails.data.attributes.name);
+  const fetchTrails = () => {
+    getAllTrails().then(({ data }) => {
+      console.log(data);
+      setTrails(cleanTrails(data));
+    });
   };
 
   const filtered = trails.filter((trail) => {
@@ -28,7 +32,7 @@ const AllTrails = () => {
   });
 
   useEffect(() => {
-    getAllTrails(mocktrails);
+    fetchTrails();
   }, []);
 
   return (
