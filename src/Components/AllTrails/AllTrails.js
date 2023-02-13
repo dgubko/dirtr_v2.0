@@ -6,19 +6,14 @@ import Card from "../Card/Card";
 import { Form } from "../Form/Form";
 import { useSearchParams } from "react-router-dom";
 import { getAllTrails } from "../../apiCalls/getAllTrails";
-import { cleanTrails } from "../../utilities/cleanTrails";
+import { cleanTrails } from "../../utilities/cleanData";
+import { useSelector } from "react-redux";
 
 const AllTrails = () => {
-  const [trails, setTrails] = useState([]);
+  const trails = useSelector((state) => state.trails);
   const [county, setCounty] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const currentParams = Object.fromEntries([...searchParams]);
-  const fetchTrails = () => {
-    getAllTrails().then(({ data }) => {
-      console.log(data);
-      setTrails(cleanTrails(data));
-    });
-  };
 
   const filtered = trails.filter((trail) => {
     const name = currentParams.name ? currentParams.name.toLowerCase() : "";
@@ -31,10 +26,6 @@ const AllTrails = () => {
     return nameMatches && difficultyMatches && countyMatches;
   });
 
-  useEffect(() => {
-    fetchTrails();
-  }, []);
-
   return (
     <div>
       <h1>AllTrails</h1>
@@ -45,7 +36,7 @@ const AllTrails = () => {
             <Card
               key={trail.id}
               name={trail.name}
-              county={county}
+              countyId={trail.county_id}
               distance={trail.distance}
               difficulty={trail.difficulty}
               image={trail.thumbnail_image}
@@ -57,4 +48,4 @@ const AllTrails = () => {
   );
 };
 
-export default AllTrails
+export default AllTrails;
