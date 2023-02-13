@@ -15,3 +15,8 @@ export const logToggle = () => {
         type: 'SIGN_IN'
     }
 };
+
+export const saveAllTrails = (trails) => ({
+  type: "SAVE_ALL_TRAILS",
+  payload: trails,
+});
