@@ -4,7 +4,7 @@ import rootReducer from './reducers'
 const defaultState = {
   isLogged: false,
   users: [],
-  trails: {},
+  trails: [],
   selectedUser: {},
   selectedTrail: {}
 }

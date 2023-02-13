@@ -15,3 +15,9 @@ export const assignTrails = data => {
         payload: data
     }
 };
+export const setUser = data => {
+    return{
+        type: 'SET_USER',
+        payload: data
+    }
+};
