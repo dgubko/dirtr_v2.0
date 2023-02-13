@@ -1,21 +1,29 @@
-import React from 'react'
-import './Card.css'
+import React from "react";
+import "./Card.css";
+import { NavLink } from 'react-router-dom';
 
-function Card() {
+function Card(props) {
   return (
-    <div className='card'>
-      <div className='image-button-container'>
-        <img src='https://a.cdn-hotels.com/gdcs/production38/d1782/61e19798-aa84-4cbe-98b4-12e8936c8979.jpg?impolicy=fcrop&w=1600&h=1066&q=medium' />
-        <button>❤️</button>
-      </div>
-      <p className='trail-name'>Scenic Trail</p>
-      <p className='county-name'>Random County</p>
-      <div className='distance-difficulty-container'>
-        <p className='trail-distance'>4 miles</p>
-        <p className='trail-difficulty'>Difficult</p>
+    <div className="card">
+      <NavLink to='/individual_trail'>
+        <div className="card-top">
+          <img src={props.image} className="scenery-image"/>
+          <div className="trail-county-container">
+            <p className="trail-name">{props.name}</p>
+            <div className="divider-bar"></div>
+            <p className="county-name">{props.county}</p>
+          </div>
+        </div>
+      </NavLink>
+      <div className="card-bottom">
+        <p className="trail-difficulty">{props.difficulty}</p>
+        <p className="trail-distance">{props.distance} miles</p>
+        <button className="favorite-button">
+          <div className="heart-image-container" />
+        </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;

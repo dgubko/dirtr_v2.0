@@ -7,6 +7,8 @@ import Welcome from "../Welcome/Welcome"
 import AboutUs from "../AboutUs/AboutUs"
 import SavedTrails from "../SavedTrails/SavedTrails"
 import IndividualTrail from "../IndividualTrail/IndividualTrail"
+import AllTrails from "../AllTrails/AllTrails";
+import { Form } from "react-router-dom";
 
 function App() {
   const counter = useSelector((state) => state.counter)
@@ -22,10 +24,13 @@ function App() {
       <button className="-" onClick={() => dispatch(decrement(1))}>
         -
       </button> */}
-      <Welcome />
-      {/* <AboutUs /> */}
-      {/* <IndividualTrail /> */}
-      {/* <SavedTrails /> */}
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/trails" element={<AllTrails />} />
+        <Route path="/saved_trails" element={<SavedTrails />} />
+        <Route path="/individual_trail" element={<IndividualTrail />} />
+        <Route path="/about" element={<AboutUs />} />
+      </Routes>
     </div>
   )
 }
