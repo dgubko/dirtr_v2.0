@@ -22,8 +22,8 @@ function App() {
       <button className="-" onClick={() => dispatch(decrement(1))}>
         -
       </button> */}
-      {/* <Welcome /> */}
-      <AboutUs />
+      <Welcome />
+      {/* <AboutUs /> */}
       {/* <IndividualTrail /> */}
       {/* <SavedTrails /> */}
     </div>
