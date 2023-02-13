@@ -1,17 +1,11 @@
 import "./AllTrails.css";
-import { useEffect } from "react";
-import { useState } from "react";
-import mocktrails from "../../mock-data/alltrails.json";
 import Card from "../Card/Card";
 import { Form } from "../Form/Form";
 import { useSearchParams } from "react-router-dom";
-import { getAllTrails } from "../../apiCalls/getAllTrails";
-import { cleanTrails } from "../../utilities/cleanData";
 import { useSelector } from "react-redux";
 
 const AllTrails = () => {
   const trails = useSelector((state) => state.trails);
-  const [county, setCounty] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const currentParams = Object.fromEntries([...searchParams]);
 
@@ -30,6 +24,11 @@ const AllTrails = () => {
     <div>
       <h1>AllTrails</h1>
       <Form />
+      {!trails.length ? (
+        <p>Could not load trails</p>
+      ) : (
+        !filtered.length && <p>There are no trails with this parameters</p>
+      )}
       <div className="all-card-container">
         {filtered.map((trail) => {
           return (
