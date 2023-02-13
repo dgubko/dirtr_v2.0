@@ -6,7 +6,7 @@ import Card from "../Card/Card";
 import { Form } from "../Form/Form";
 import { useSearchParams } from "react-router-dom";
 
-export const AllTrails = () => {
+const AllTrails = () => {
   const [trails, setTrails] = useState([]);
   const [county, setCounty] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
@@ -52,3 +52,5 @@ export const AllTrails = () => {
     </div>
   );
 };
+
+export default AllTrails

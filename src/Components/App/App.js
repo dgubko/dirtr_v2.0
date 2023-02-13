@@ -27,11 +27,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/trails" element={<AllTrails />} />
+        <Route path="/saved_trails" element={<SavedTrails />} />
+        <Route path="/individual_trail" element={<IndividualTrail />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
-      {/* <Welcome /> */}
-      {/* <AboutUs /> */}
-      {/* <IndividualTrail /> */}
-      {/* <SavedTrails /> */}
     </div>
   )
 }

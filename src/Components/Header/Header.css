@@ -6,16 +6,18 @@
 
 .banner {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   background-color: #5e2222;
   width: 100%;
-  padding: 8px 32px;
+  height: 6vw;
 }
 
 .title {
   color: #ffffff;
-  margin: 0;
-  font-size: 48px;
+  margin-left: 3vw;
+  font-size: 3vw;
 }
 
 .title-r {
@@ -35,4 +37,10 @@
   transform: scale(1.2);
   transition: all ease-in-out 0.3s;
   -webkit-text-stroke: 0.008vw #ffffff;
+}
+
+.about-button {
+  font-family: "Kanit";
+  color:#ffffff;
+  margin-right: 3vw;
 }
