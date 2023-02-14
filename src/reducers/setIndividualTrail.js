@@ -1,4 +1,4 @@
-const setIndividualTrail = (state = '', action) => {
+const setIndividualTrail = (state = {}, action) => {
     switch(action.type) {
         case 'SET_TRAIL':
             return action.payload
