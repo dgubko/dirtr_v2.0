@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-.banner {
+.banner, .login-banner {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,14 +14,24 @@
   height: 6vw;
 }
 
-.title {
-  color: #ffffff;
-  margin-left: 3vw;
-  font-size: 3vw;
+.login-banner {
+  justify-content: center;
 }
 
-.title-r {
+.title, .static-title {
+  color: #ffffff;
+  margin-left: 3vw;
+  font-size: 3.5vw;
+  cursor: default;
+}
+
+.static-title {
+  margin-left: 0vw;
+}
+
+.title-r, .static-title-r{
   color: #f18b1c;
+  cursor: default;
 }
 
 .title:hover {

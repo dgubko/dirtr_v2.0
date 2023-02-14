@@ -1,18 +1,36 @@
 import "./App.css"
+import React, { useEffect, useState } from "react"
 import { Route, Routes, NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import { increment, decrement } from "../../actions"
-import Header from "../../Components/Header/Header"
+import { assignUsers, assignTrails } from "../../actions"
+import Header from "../Header/Header"
 import Welcome from "../Welcome/Welcome"
 import AboutUs from "../AboutUs/AboutUs"
 import SavedTrails from "../SavedTrails/SavedTrails"
 import IndividualTrail from "../IndividualTrail/IndividualTrail"
 import AllTrails from "../AllTrails/AllTrails";
+import Login from "../Login/Login"
 import { Form } from "react-router-dom";
+import getData from '../../utilis/apiCalls'
 
-function App() {
-  const counter = useSelector((state) => state.counter)
+const App = () => {
+  const users = useSelector((state) => state.users)
   const dispatch = useDispatch()
+
+  const instantiateData = () => {
+    Promise.all([
+      getData('http://localhost:3000/api/v1/users'),
+      getData('http://localhost:3000/api/v1/trails')
+      //we'll need to set up environment variables here once the BE is deployed.
+    ]).then(data => {
+        dispatch(assignUsers(data[0]))
+        dispatch(assignTrails(data[1]))
+    });
+  };
+
+  useEffect(() => {
+    instantiateData();
+  }, []);
 
   return (
     <div className="App">
@@ -25,7 +43,8 @@ function App() {
         -
       </button> */}
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Welcome />} />
         <Route path="/trails" element={<AllTrails />} />
         <Route path="/saved_trails" element={<SavedTrails />} />
         <Route path="/individual_trail" element={<IndividualTrail />} />
