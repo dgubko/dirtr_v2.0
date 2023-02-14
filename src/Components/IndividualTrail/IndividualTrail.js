@@ -29,7 +29,7 @@ function IndividualTrail() {
           </NavLink>
         </div>
         <div className='trail-map-container'>
-          <img width='500' src={selectedTrail.map_image} />
+          <img width='500' alt={selectedTrail.name + ' map'} src={selectedTrail.map_image} />
         </div>
       </div>
     </div>
