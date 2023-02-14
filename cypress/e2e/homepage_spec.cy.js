@@ -1,6 +1,7 @@
 describe('Landing Page User Flow', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3001/')
+    // we need to expand this to click a user button and click log in so it starts on the home page
   })
 
   it('Should see Dirtr title', () => {

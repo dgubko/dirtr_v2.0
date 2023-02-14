@@ -1,4 +1,4 @@
-const setIndividualUser = (state = '', action) => {
+const setIndividualUser = (state = {}, action) => {
     switch(action.type) {
         case 'SET_USER':
             return action.payload

@@ -1,4 +1,4 @@
-const assignTrails = (state = '', action) => {
+const assignTrails = (state = {}, action) => {
     switch(action.type) {
         case 'ASSIGN_TRAILS':
             return action.payload

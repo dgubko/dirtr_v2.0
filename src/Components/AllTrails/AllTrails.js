@@ -27,13 +27,14 @@ const AllTrails = () => {
       {!trails.length ? (
         <p>Could not load trails</p>
       ) : (
-        !filtered.length && <p>There are no trails with this parameters</p>
+        !filtered.length && <p>No trails found</p>
       )}
       <div className="all-card-container">
         {filtered.map((trail) => {
           return (
             <Card
               key={trail.id}
+              id={trail.id}
               name={trail.name}
               countyId={trail.county_id}
               distance={trail.distance}

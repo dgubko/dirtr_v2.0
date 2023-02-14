@@ -2,19 +2,17 @@ import "./App.css";
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { saveAllCounties } from "../../actions";
 import SavedTrails from "../SavedTrails/SavedTrails";
 import IndividualTrail from "../IndividualTrail/IndividualTrail";
-import { assignUsers } from "../../actions";
 import Header from "../Header/Header";
 import Welcome from "../Welcome/Welcome";
 import AboutUs from "../AboutUs/AboutUs";
 import AllTrails from "../AllTrails/AllTrails";
 import Login from "../Login/Login";
-import getData from "../../utilis/apiCalls";
+import { getData } from "../../utilis/apiCalls";
 import { getAllTrails } from "../../apiCalls/getAllTrails";
 import { getAllCounties } from "../../apiCalls/getAllCounties";
-import { saveAllTrails } from "../../actions";
+import { saveAllTrails, saveAllCounties, assignUsers } from "../../actions";
 import { cleanData } from "../../utilities/cleanData";
 
 function App() {
@@ -31,7 +29,7 @@ function App() {
       dispatch(saveAllTrails(cleanData(trailsData)));
       dispatch(saveAllCounties(cleanData(countiesData)));
     });
-  });
+  }, []);
 
   return (
     <div className="App">
