@@ -1,7 +1,7 @@
 import './Login.css';
 import { Route, Routes, NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { logToggle, setUser } from "../../actions"
+import { logIn, setUser } from "../../actions"
 import localUsers from '../../localUsers'
 
 const Login = () => {
@@ -27,7 +27,7 @@ const getUser = (id) => {
 
 const selectAccount = (id) => {
   getUser(id)
-  dispatch(logToggle())
+  dispatch(logIn())
 }
 
 const enterButton = (<NavLink to='/home'>
