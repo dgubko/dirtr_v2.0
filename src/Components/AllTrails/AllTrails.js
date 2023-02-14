@@ -34,6 +34,7 @@ const AllTrails = () => {
           return (
             <Card
               key={trail.id}
+              id={trail.id}
               name={trail.name}
               countyId={trail.county_id}
               distance={trail.distance}
