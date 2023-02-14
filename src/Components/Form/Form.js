@@ -1,11 +1,14 @@
 import { useSearchParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const Form = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const currentParams = Object.fromEntries([...searchParams]);
+  const counties = useSelector((state) => state.counties);
 
   const handleChange = (event) => {
-    const id = event.target.id;
-    setSearchParams({ [id]: event.target.value });
+    searchParams.set(event.target.id, event.target.value);
+    setSearchParams(searchParams);
   };
 
   return (
@@ -16,17 +19,33 @@ export const Form = () => {
           type="text"
           placeholder="Search by name"
           onChange={handleChange}
+          value={currentParams.name || ""}
         />
-        <select name="difficulty" id="difficulty" onChange={handleChange}>
+        <select
+          name="difficulty"
+          id="difficulty"
+          onChange={handleChange}
+          value={currentParams.difficulty || ""}
+        >
           <option value="">All difficulties</option>
           <option value="green">Green</option>
           <option value="blue">Blue</option>
           <option value="black">Black</option>
         </select>
-        <select name="county_id" id="county" onChange={handleChange}>
+        <select
+          name="county_id"
+          id="county"
+          onChange={handleChange}
+          value={currentParams.county || ""}
+        >
           <option value="">All Counties</option>
-          <option value="27">Boulder County</option>
-          <option value="28">Adams County</option>
+          {counties.map((county) => {
+            return (
+              <option key={county.id} value={county.id}>
+                {county.name}
+              </option>
+            );
+          })}
         </select>
       </form>
     </div>
