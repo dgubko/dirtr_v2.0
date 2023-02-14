@@ -14,7 +14,11 @@ function Card(props) {
     <div className="card">
       <NavLink to="/individual_trail">
         <div className="card-top">
-          <img src={props.image} className="scenery-image" />
+          <img
+            src={props.image}
+            className="scenery-image"
+            alt="scenery image"
+          />
           <div className="trail-county-container">
             <p className="trail-name">{props.name}</p>
             <div className="divider-bar"></div>
@@ -26,7 +30,7 @@ function Card(props) {
         <p className="trail-difficulty">{props.difficulty}</p>
         <p className="trail-distance">{props.distance} miles</p>
         <button className="favorite-button">
-          <div className="heart-image-container" />
+          <div className="heart-image-container" alt="favorite button" />
         </button>
       </div>
     </div>
