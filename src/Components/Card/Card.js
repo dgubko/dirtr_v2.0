@@ -19,6 +19,7 @@ function Card(props) {
       .then(response => response.json())
       .then(data => dispatch(setTrail(data)))
       .catch(err => console.log(err))
+  }
   const currentUser = useSelector((state) => state.selectedUser);
   const trails = useSelector((state) => state.trails);
 
@@ -26,6 +27,7 @@ function Card(props) {
     const foundTrail = trails.find(trail => trail.id === propsId)
     postToFavorites(foundTrail, currentUser.data.id)
   }
+
 
   return (
     <div className="card">
@@ -54,4 +56,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default Card
