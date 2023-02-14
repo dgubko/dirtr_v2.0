@@ -14,12 +14,6 @@ function Card(props) {
   const dispatch = useDispatch();
 
   const selectTrail = (id) => {
-  //  return fetch("http://localhost:3000/api/v1/trail?id=" + id, {})
-   //   .then((response) => response.json())
-   //   .then((data) => dispatch(setTrail(data)))
-    //  .catch((err) => console.log(err));
- // };
- // const currentUser = useSelector((state) => state.selectedUser);
     return fetch('http://localhost:3000/api/v1/trail?id=' + id, {
     })
       .then(response => response.json())
@@ -38,16 +32,12 @@ function Card(props) {
   }
 
   const addToFavorites = (propsId) => {
-    //const foundTrail = trails.find((trail) => trail.id === propsId);
-    //postToFavorites(foundTrail, currentUser.data.id).then(() => {
-      //dispatch(saveUserTrail(foundTrail));
-   // });
- //};
     const foundTrail = trails.find(trail => trail.id === propsId)
     const dupeTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
     if(dupeTrails.length === 0) {
       postToFavorites(foundTrail, currentUser.id)
       .then(() => getUser(currentUser.id))
+        //dispatch(saveUserTrail(foundTrail));
     } else {
       alert('dupe trail!')
     }
