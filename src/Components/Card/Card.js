@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useReducer } from "react";
 import "./Card.css";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setTrail } from "../../actions"
 
 function Card(props) {
   const county = useSelector((state) =>
@@ -9,11 +10,20 @@ function Card(props) {
       return county.id === props.countyId.toFixed();
     })
   );
+  const dispatch = useDispatch()
+
+  const selectTrail = (id) => {
+    return fetch('http://localhost:3000/api/v1/trail?id=' + id, {
+    })
+      .then(response => response.json())
+      .then(data => dispatch(setTrail(data)))
+      .catch(err => console.log(err))
+  }
 
   return (
     <div className="card">
       <NavLink to="/individual_trail">
-        <div className="card-top">
+        <div className="card-top" onClick={() => selectTrail(props.id)}>
           <img
             src={props.image}
             className="scenery-image"
