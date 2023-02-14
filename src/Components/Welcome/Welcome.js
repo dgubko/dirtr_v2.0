@@ -1,4 +1,5 @@
 import "./Welcome.css";
+import AboutButton from "../AboutButton/AboutButton";
 import { NavLink } from 'react-router-dom'
 
 const Welcome = () => {
@@ -10,6 +11,7 @@ const Welcome = () => {
             FIND YOUR TRAIL ▶︎
           </button>
         </NavLink>
+        <AboutButton />
     </div>
   );
 }

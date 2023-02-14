@@ -9,19 +9,6 @@
   min-height: 100vh;
 }
 
-.fixed-about {
-  display: flex;
-  justify-content: center;
-  background-color:#f18b1c;
-  color:#ffffff;
-  font-size: 1.5vw;
-  border-radius: .7vw;
-  position: fixed;
-  bottom: .4vw;
-  right: .4vw;
-  width: 5.5vw;
-}
-
 a:link,
 a:visited,
 a:hover,

@@ -1,4 +1,5 @@
 import React from 'react'
+import AboutButton from '../AboutButton/AboutButton'
 import './IndividualTrail.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
@@ -32,6 +33,7 @@ function IndividualTrail() {
           <img width='500' alt={selectedTrail.name + ' map'} src={selectedTrail.map_image} />
         </div>
       </div>
+      <AboutButton />
     </div>
   )
 }
