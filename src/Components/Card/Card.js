@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useReducer } from "react";
 import "./Card.css";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setTrail } from "../../actions"
 import { postToFavorites } from "../../utilis/apiCalls";
 
 function Card(props) {
@@ -10,21 +11,26 @@ function Card(props) {
       return county.id === props.countyId.toFixed();
     })
   );
+  const dispatch = useDispatch()
+
+  const selectTrail = (id) => {
+    return fetch('http://localhost:3000/api/v1/trail?id=' + id, {
+    })
+      .then(response => response.json())
+      .then(data => dispatch(setTrail(data)))
+      .catch(err => console.log(err))
   const currentUser = useSelector((state) => state.selectedUser);
   const trails = useSelector((state) => state.trails);
 
   const addToFavorites = (propsId) => {
     const foundTrail = trails.find(trail => trail.id === propsId)
     postToFavorites(foundTrail, currentUser.data.id)
-    // .then(response => {
-    //   this.setState({orders: [...this.state.orders, response]})
-    // })
   }
 
   return (
     <div className="card">
       <NavLink to="/individual_trail">
-        <div className="card-top">
+        <div className="card-top" onClick={() => selectTrail(props.id)}>
           <img
             src={props.image}
             className="scenery-image"
