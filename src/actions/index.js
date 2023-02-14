@@ -44,3 +44,15 @@ export const setTrail = (data) => {
     payload: data,
   };
 };
+
+export const saveAllUserTrails = (data) => {
+  return {
+    type: "SAVE_ALL_USER_TRAILS",
+    payload: data,
+  };
+};
+
+export const saveUserTrail = (data) => ({
+  type: "SAVE_USER_TRAIL",
+  payload: data,
+});
