@@ -15,8 +15,8 @@ function IndividualTrail() {
             <button className='trail-button'>❤️</button>
           </div>
           <div className='trail-addl-detail-styling'>
-            <p className='trail-distance'>Distance: {selectedTrail.distance ? selectedTrail.distance : "N/A"} miles</p>
-            <p className='trail-duration'>Duration: {selectedTrail.avg_duration}</p>
+            <p className='trail-distance'>Distance: {selectedTrail.distance} miles</p>
+            <p className='trail-duration'>Duration: {selectedTrail.avg_duration ? selectedTrail.avg_duration : "N/A"}</p>
             <p className='trail-elevation'>Elevation: {selectedTrail.start_elevation}</p>
             <p className='trail-difficulty'>Difficulty: {selectedTrail.difficulty}</p>
           </div>
