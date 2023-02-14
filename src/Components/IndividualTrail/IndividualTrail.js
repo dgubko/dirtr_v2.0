@@ -1,6 +1,7 @@
 import React from 'react'
 import './IndividualTrail.css'
 import { useSelector, useDispatch } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 function IndividualTrail() {
   const selectedTrail = useSelector((state) => state.selectedTrail.data.attributes)
@@ -23,7 +24,9 @@ function IndividualTrail() {
             <h2 className='trail-overview-title'>Overview</h2>
             <p className='trail-overview-description'>{selectedTrail.description}</p>
           </div>
+          <NavLink to='/home'>
           <button className='return-home-button'>Return Home</button>
+          </NavLink>
         </div>
         <div className='trail-map-container'>
           <img width='500' src={selectedTrail.map_image} />
