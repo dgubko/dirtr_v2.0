@@ -20,9 +20,6 @@ const Header = () => {
                       <h1 className='title'>Dirt<span className='title-r'>r</span></h1>
                   </NavLink>
                   <div className='header-right'>
-                    <NavLink to='/about'>
-                        <h1 className='about-button'>About</h1>
-                    </NavLink>
                     <div className='account-section'>
                       <h1 className='welcome-user'>Welcome, {selectedUser.attributes.name !== 'signed-out' ? selectedUser.attributes.name : ''}</h1>
                       <NavLink to='/'>
