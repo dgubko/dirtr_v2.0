@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import "./Card.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setTrail, saveUserTrail } from "../../actions";
+import { setTrail, saveUserTrail, setUser } from "../../actions";
 import { postToFavorites } from "../../utilis/apiCalls";
 
 function Card(props) {
@@ -14,20 +14,45 @@ function Card(props) {
   const dispatch = useDispatch();
 
   const selectTrail = (id) => {
-    return fetch("http://localhost:3000/api/v1/trail?id=" + id, {})
-      .then((response) => response.json())
-      .then((data) => dispatch(setTrail(data)))
-      .catch((err) => console.log(err));
-  };
-  const currentUser = useSelector((state) => state.selectedUser);
+  //  return fetch("http://localhost:3000/api/v1/trail?id=" + id, {})
+   //   .then((response) => response.json())
+   //   .then((data) => dispatch(setTrail(data)))
+    //  .catch((err) => console.log(err));
+ // };
+ // const currentUser = useSelector((state) => state.selectedUser);
+    return fetch('http://localhost:3000/api/v1/trail?id=' + id, {
+    })
+      .then(response => response.json())
+      .then(data => dispatch(setTrail(data)))
+      .catch(err => console.log(err))
+  }
+  const currentUser = useSelector((state) => state.selectedUser.data);
   const trails = useSelector((state) => state.trails);
 
+  const getUser = (id) => {
+    return fetch('http://localhost:3000/api/v1/user?id=' + id, {
+    })
+      .then(response => response.json())
+      .then(data => dispatch(setUser(data)))
+      .catch(err => console.log(err))
+  }
+
   const addToFavorites = (propsId) => {
-    const foundTrail = trails.find((trail) => trail.id === propsId);
-    postToFavorites(foundTrail, currentUser.data.id).then(() => {
-      dispatch(saveUserTrail(foundTrail));
-    });
-  };
+    //const foundTrail = trails.find((trail) => trail.id === propsId);
+    //postToFavorites(foundTrail, currentUser.data.id).then(() => {
+      //dispatch(saveUserTrail(foundTrail));
+   // });
+ //};
+    const foundTrail = trails.find(trail => trail.id === propsId)
+    const dupeTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
+    if(dupeTrails.length === 0) {
+      postToFavorites(foundTrail, currentUser.id)
+      .then(() => getUser(currentUser.id))
+    } else {
+      alert('dupe trail!')
+    }
+  }
+
 
   return (
     <div className="card">
@@ -59,4 +84,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default Card

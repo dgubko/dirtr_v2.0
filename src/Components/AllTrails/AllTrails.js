@@ -1,5 +1,6 @@
 import "./AllTrails.css";
 import Card from "../Card/Card";
+import AboutButton from "../AboutButton/AboutButton";
 import { Form } from "../Form/Form";
 import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -44,6 +45,7 @@ const AllTrails = () => {
           );
         })}
       </div>
+      <AboutButton />
     </div>
   );
 };

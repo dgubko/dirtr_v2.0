@@ -13,36 +13,50 @@ const Header = () => {
   };
 
   if (loginBoolean) {
-    return (
-      <div className="Header">
-        <div className="banner">
-          <NavLink to="/home">
-            <h1 className="title">
-              Dirt<span className="title-r">r</span>
-            </h1>
-          </NavLink>
-          <div className="header-right">
-            <NavLink to="/saved_trails">
-              <h1 className="about-button">Favorites</h1>
-            </NavLink>
-            <NavLink to="/about">
-              <h1 className="about-button">About</h1>
-            </NavLink>
-            <div className="account-section">
-              <h1 className="welcome-user">
-                Welcome,{" "}
-                {selectedUser.attributes.name !== "signed-out"
-                  ? selectedUser.attributes.name
-                  : ""}
-              </h1>
-              <NavLink to="/">
-                <button className="sign-out" onClick={() => signOut()}>
-                  Sign Out
-                </button>
-              </NavLink>
-            </div>
-          </div>
-        </div>
+     // <div className="Header">
+      //  <div className="banner">
+        //  <NavLink to="/home">
+          //  <h1 className="title">
+            //  Dirt<span className="title-r">r</span>
+           // </h1>
+          //</NavLink>
+         // <div className="header-right">
+            //<NavLink to="/saved_trails">
+             // <h1 className="about-button">Favorites</h1>
+           // </NavLink>
+           // <NavLink to="/about">
+             // <h1 className="about-button">About</h1>
+           // </NavLink>
+            //<div className="account-section">
+             // <h1 className="welcome-user">
+               // Welcome,{" "}
+               // {selectedUser.attributes.name !== "signed-out"
+                //  ? selectedUser.attributes.name
+                  //: ""}
+             // </h1>
+              //<NavLink to="/">
+              //  <button className="sign-out" onClick={() => signOut()}>
+                 // Sign Out
+               // </button>
+              //</NavLink>
+           // </div>
+         // </div>
+       // </div>
+return (
+      <div className='Header'>
+          <div className='banner'>
+                  <NavLink to='/home'>
+                      <h1 className='title'>Dirt<span className='title-r'>r</span></h1>
+                  </NavLink>
+                  <div className='header-right'>
+                    <div className='account-section'>
+                      <h1 className='welcome-user'>Welcome, {selectedUser.attributes.name !== 'signed-out' ? selectedUser.attributes.name : ''}</h1>
+                      <NavLink to='/'>
+                        <button className='sign-out' onClick={() => signOut()}>Sign Out</button>
+                      </NavLink>
+                    </div>
+                  </div>
+              </div>
       </div>
     );
   }
