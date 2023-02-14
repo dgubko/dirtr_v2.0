@@ -3,6 +3,7 @@ import "./Card.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setTrail } from "../../actions"
+import { postToFavorites } from "../../utilis/apiCalls";
 
 function Card(props) {
   const county = useSelector((state) =>
@@ -18,6 +19,12 @@ function Card(props) {
       .then(response => response.json())
       .then(data => dispatch(setTrail(data)))
       .catch(err => console.log(err))
+  const currentUser = useSelector((state) => state.selectedUser);
+  const trails = useSelector((state) => state.trails);
+
+  const addToFavorites = (propsId) => {
+    const foundTrail = trails.find(trail => trail.id === propsId)
+    postToFavorites(foundTrail, currentUser.data.id)
   }
 
   return (
@@ -39,7 +46,7 @@ function Card(props) {
       <div className="card-bottom">
         <p className="trail-difficulty">{props.difficulty}</p>
         <p className="trail-distance">{props.distance} miles</p>
-        <button className="favorite-button">
+        <button className="favorite-button" onClick={() => addToFavorites(props.id)}>
           <div className="heart-image-container" alt="favorite button" />
         </button>
       </div>

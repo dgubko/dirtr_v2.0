@@ -27,7 +27,7 @@ const AllTrails = () => {
       {!trails.length ? (
         <p>Could not load trails</p>
       ) : (
-        !filtered.length && <p>There are no trails with this parameters</p>
+        !filtered.length && <p>No trails found</p>
       )}
       <div className="all-card-container">
         {filtered.map((trail) => {
