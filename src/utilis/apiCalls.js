@@ -17,3 +17,17 @@ export const getData = (url) => {
     })
     .then(response => response.json())
   }
+
+  export const deleteFromFavorites = (trail, userId) => {
+    return fetch("http://localhost:3000/api/v1/user-trails", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify( {
+        "user_id": userId,
+        "trail_id": trail.id
+      })
+    })
+    .then(response => response.json())
+  }

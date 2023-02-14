@@ -42,6 +42,7 @@ function App() {
         <Route path="/individual_trail" element={<IndividualTrail />} />
         <Route path="/about" element={<AboutUs />} />
       </Routes>
+      <div className="fixed-about">About</div>
     </div>
   );
 }
