@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutUs.css'
 import carGif from '../../assets/images/off-roading.gif'
-import { GITHUB_ROUTES } from '../../utilis/constants'
+import { GITHUB_ROUTES } from '../../utilities/constants'
 
 function AboutUs() {
   return (

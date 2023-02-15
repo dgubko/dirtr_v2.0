@@ -3,7 +3,7 @@ import "./Card.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setTrail, setUser } from "../../actions";
-import { postToFavorites } from "../../utilis/apiCalls";
+import { postToFavorites } from "../../utilities/apiCalls";
 
 function Card(props) {
   const county = useSelector((state) =>

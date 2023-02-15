@@ -9,9 +9,8 @@ import Welcome from "../Welcome/Welcome";
 import AboutUs from "../AboutUs/AboutUs";
 import AllTrails from "../AllTrails/AllTrails";
 import Login from "../Login/Login";
-import { getData } from "../../utilis/apiCalls";
-import { getAllTrails } from "../../apiCalls/getAllTrails";
-import { getAllCounties } from "../../apiCalls/getAllCounties";
+import { getData } from "../../utilities/apiCalls";
+import { getAllTrails, getAllCounties } from "../../utilities/apiCalls";
 import { saveAllTrails, saveAllCounties, assignUsers } from "../../actions";
 import { cleanData } from "../../utilities/cleanData";
 

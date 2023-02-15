@@ -3,7 +3,7 @@ import "./SavedTrails.css";
 import SavedCard from "../SavedCard/SavedCard";
 import { NavLink } from "react-router-dom";
 import AboutButton from "../AboutButton/AboutButton";
-import { getUserSavedTrails } from "../../apiCalls/getUserSavedTrails";
+import { getUserSavedTrails } from "../../utilities/apiCalls";
 import { useDispatch } from "react-redux";
 import { saveAllUserTrails } from "../../actions";
 import { useSelector } from "react-redux";
