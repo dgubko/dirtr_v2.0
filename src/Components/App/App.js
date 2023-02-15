@@ -9,6 +9,7 @@ import Welcome from "../Welcome/Welcome";
 import AboutUs from "../AboutUs/AboutUs";
 import AllTrails from "../AllTrails/AllTrails";
 import Login from "../Login/Login";
+import BadUrl from "../BadUrl/BadUrl";
 import { getAllUsers, getAllTrails, getAllCounties } from "../../utilities/apiCalls";
 import { saveAllTrails, saveAllCounties, assignUsers } from "../../actions";
 import { cleanData } from "../../utilities/cleanData";
@@ -39,6 +40,7 @@ function App() {
         <Route path="/saved_trails" element={<SavedTrails />} />
         <Route path="/individual_trail" element={<IndividualTrail />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="*" element={<BadUrl />} />
       </Routes>
     </div>
   );
