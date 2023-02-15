@@ -6,7 +6,7 @@ import rootReducer from './reducers'
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['isLogged', 'selectedUser']
+  whitelist: ['isLogged', 'selectedUser', 'selectedTrail']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

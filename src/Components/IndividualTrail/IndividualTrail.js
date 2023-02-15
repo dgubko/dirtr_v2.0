@@ -30,14 +30,19 @@ function IndividualTrail() {
       alert('dupe trail!')
     }
   }
+
+  //const favoritedTrailChecker = currentUser.attributes.trails.filter(trail => trail.id === selectedTrail.id)
+
+  const favoriteButton=(<button className="favorite-button" onClick={() => addToFavorites(selectedTrail.id)}>
+  <div className="heart-image-container" alt="favorite button" />
+</button>)
+
   return (
     <div className='IndividualTrail'>
       <h2 className='individual-trail-name'>{selectedTrail.name}</h2>
       <div className='description-top'>
         <div className='description-top-left'>
-          <button className="favorite-button" onClick={() => addToFavorites(selectedTrail.id)}>
-            <div className="heart-image-container" alt="favorite button" />
-          </button>
+          {favoriteButton}
           <div className='description-top-left-box'>
               <p className='trail-distance'>Distance: {selectedTrail.distance} miles</p>
               <p className='trail-duration'>Duration: {selectedTrail.avg_duration ? selectedTrail.avg_duration : "N/A"}</p>
