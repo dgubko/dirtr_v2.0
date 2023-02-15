@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+  "id": "1",
+  "type": "trails",
+  "attributes": {
+  "id": 1,
+  "name": "Cowboy Lake",
+  "latitude": "38.22771",
+  "longitude": "-107.54796",
+  "difficulty": "green",
+  "distance": "1.5",
+  "description": "Cowboy Lake is a 1 mile less popular green doubletrack trail located near Ridgway Colorado. This atv/orv/ohv primary trail can be used both directions.",
+  "created_at": "2023-02-02T16:34:05.000Z",
+  "updated_at": "2023-02-02T16:34:05.000Z",
+  "start_elevation": "9,184 ft",
+  "avg_duration": null,
+  "map_image": "https://ep1.pinkbike.org/trailstaticmap/421000/421278_0_500x200.png",
+  "thumbnail_image": "https://4.bp.blogspot.com/-Duyiyyb7WWU/U_JKdTEN5yI/AAAAAAAAZ64/dipM0wxc3L8/s1600/Cowboy%2BLake%2B132.JPG",
+  "county_id": 1
+      }
+    },
+    {
+  "id": "2",
+  "type": "trails",
+  "attributes": {
+  "id": 2,
+  "name": "Lou Creek",
+  "latitude": "38.22771",
+  "longitude": "-107.54796",
+  "difficulty": "blue",
+  "distance": "2.7",
+  "description": "Lou Creek is a 3 mile less popular blue doubletrack trail located near Ridgway Colorado. This atv/orv/ohv primary trail can be used both directions. On average it takes 57 minutes to complete this trail.",
+  "created_at": "2023-02-02T16:35:14.000Z",
+  "updated_at": "2023-02-02T16:35:14.000Z",
+  "start_elevation": "9,214 ft",
+  "avg_duration": "0:57:30",
+  "map_image": "https://ep1.pinkbike.org/trailstaticmap/421000/421237_0_500x200.png",
+  "thumbnail_image": "https://1.bp.blogspot.com/-20tDnLc9Fwg/U_N2uPV9w6I/AAAAAAAAZ9s/nW4wVtOB_Tc/s1600/West%2BFork%2B004.JPG",
+  "county_id": 1
+      }
+    },
+    {
+  "id": "3",
+  "type": "trails",
+  "attributes": {
+  "id": 3,
+  "name": "Stealey Mountain North",
+  "latitude": "38.14721",
+  "longitude": "-107.59245",
+  "difficulty": "blue",
+  "distance": "3.6",
+  "description": "Stealey Mountain North is a 2 mile less popular blue singletrack trail located near Ridgway Colorado. This hike primary trail can be used both directions",
+  "created_at": "2023-02-02T16:36:23.000Z",
+  "updated_at": "2023-02-02T16:36:23.000Z",
+  "start_elevation": "9,742 ft",
+  "avg_duration": null,
+  "map_image": "https://ep1.pinkbike.org/trailstaticmap/421000/421103_0_500x200.png",
+  "thumbnail_image": "https://i.ytimg.com/vi/IgvX5v4YzpE/maxresdefault.jpg",
+  "county_id": 1
+      }
+    }
+  ]
+}

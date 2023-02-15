@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+  "id": "1",
+  "type": "users",
+  "attributes": {
+  "name": "Kenz Leng",
+  "email": "kenz@dirtr.dirt"
+      }
+    },
+    {
+  "id": "2",
+  "type": "users",
+  "attributes": {
+  "name": "Eli Fuchsman",
+  "email": "eli@dirtr.dirt"
+      }
+    },
+    {
+  "id": "3",
+  "type": "users",
+  "attributes": {
+  "name": "Shawn Lee",
+  "email": "shawn@dirtr.dirt"
+      }
+    }
+  ]
+}
