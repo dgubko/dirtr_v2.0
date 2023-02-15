@@ -1,0 +1,22 @@
+.name-field {
+    height: 1.5vw;
+    width: 12vw;
+    background-color: #fffff8;;
+    font-family: "Kanit";
+    font-size: .9vw;
+    border: .21vw solid #cdcdcd;
+    border-radius: .7vw;
+}
+
+.difficulty-field, .county-field {
+    height: 2vw;
+    width: 8vw;
+    font-family: "Kanit";
+    font-size: .9vw;
+    color:#ffffff;
+    background-color:#f18b1c;
+    border: none;
+    border-radius: .7vw;
+    margin-left: .5vw;
+    cursor: pointer;
+}

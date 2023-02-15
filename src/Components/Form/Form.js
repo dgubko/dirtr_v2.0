@@ -1,3 +1,4 @@
+import "./Form.css";
 import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -15,6 +16,7 @@ export const Form = () => {
     <div>
       <form>
         <input
+          className="name-field"
           id="name"
           type="text"
           placeholder="Search by name"
@@ -22,17 +24,19 @@ export const Form = () => {
           value={currentParams.name || ""}
         />
         <select
+          className="difficulty-field"
           name="difficulty"
           id="difficulty"
           onChange={handleChange}
           value={currentParams.difficulty || ""}
         >
-          <option value="">All difficulties</option>
+          <option value="">All Difficulties</option>
           <option value="green">Green</option>
           <option value="blue">Blue</option>
           <option value="black">Black</option>
         </select>
         <select
+          className="county-field"
           name="county_id"
           id="county"
           onChange={handleChange}

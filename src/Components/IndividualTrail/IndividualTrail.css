@@ -1,43 +1,48 @@
-.individual-trail-container {
+.individual-trail-name {
+  font-size: 2vw;
+}
+
+.description-top {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
-.trail-details-container {
-  width: 35vw;
-  border: 1px solid black;
-  margin-right: 2vw;
-  padding: 1vw;
+.description-top-left {
+  width: 50%;
 }
 
-.trail-name-button-styling {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.trail-name-button-styling > h2 {
-  font-size: 1.7rem;
-}
-
-.trail-name-button-styling > button {
-  width: 3vw;
-  height: 5vh;
-  font-size: 1.6rem;
-}
-
-.trail-addl-detail-styling {
+.description-top-left-box {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.trail-overview-title {
-  font-size: 1.5rem;
-  text-align: left;
+.trail-distance, .trail-duration, .trail-elevation, .trail-difficulty {
+  font-size: 2vw;
 }
 
-.trail-overview-description {
+.description-top-right {
+  width: 50%;
+}
+
+.trail-image {
+  height: 16vw;
+  min-width: 35vw;
+  max-width: 40vw;
+}
+
+.description-bottom {
+  background-color: #242323;
+  color:#ffffff;
+  font-size: 1.vw;
+  border: .21vw solid #cdcdcd;
+  border-radius: .7vw;
+  padding: 1vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  height: 10vw;
+  width: 84vw;
+  margin-top: 2vw;
+}
+
+.trail-overview {
   text-align: left;
 }

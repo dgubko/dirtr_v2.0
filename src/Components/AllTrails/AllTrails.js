@@ -23,7 +23,7 @@ const AllTrails = () => {
 
   return (
     <div>
-      <h1>AllTrails</h1>
+      <h1>Trails</h1>
       <Form />
       {!trails.length ? (
         <p>Could not load trails</p>
