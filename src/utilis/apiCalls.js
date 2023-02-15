@@ -12,7 +12,7 @@ export const getData = (url) => {
       },
       body: JSON.stringify( {
         "user_id": userId,
-        "trail_id": newTrail.id
+        "trail_id": newTrail
       })
     })
     .then(response => response.json())

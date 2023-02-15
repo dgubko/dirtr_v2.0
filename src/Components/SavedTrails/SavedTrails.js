@@ -12,7 +12,6 @@ function SavedTrails() {
   const savedTrails = useSelector((state) => state.savedTrails);
   const dispatch = useDispatch();
   const id = useSelector((state) => state.selectedUser.data.id);
-  console.log(id);
 
   useEffect(() => {
     getUserSavedTrails(id).then(({ data }) => {

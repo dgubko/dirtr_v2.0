@@ -1,9 +1,48 @@
-.trail-overview {
-  text-align: left;
+.individual-trail-name {
+  font-size: 2vw;
+}
+
+.description-top {
+  display: flex;
+}
+
+.description-top-left {
+  width: 50%;
+}
+
+.description-top-left-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.trail-distance, .trail-duration, .trail-elevation, .trail-difficulty {
+  font-size: 2vw;
+}
+
+.description-top-right {
+  width: 50%;
 }
 
 .trail-image {
   height: 16vw;
   min-width: 35vw;
   max-width: 40vw;
+}
+
+.description-bottom {
+  background-color: #242323;
+  color:#ffffff;
+  font-size: 1.vw;
+  border: .21vw solid #cdcdcd;
+  border-radius: .7vw;
+  padding: 1vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  height: 10vw;
+  width: 84vw;
+  margin-top: 2vw;
+}
+
+.trail-overview {
+  text-align: left;
 }

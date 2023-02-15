@@ -6,13 +6,12 @@ import { setTrail, setUser } from "../../actions";
 import { deleteFromFavorites } from "../../utilis/apiCalls";
 
 function SavedCard(props) {
-  const savedTrails = useSelector((state) => state.savedTrails);
   const county = useSelector((state) =>
     state.counties.find((county) => {
       return county.id === props.countyId.toFixed();
     })
   );
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const selectTrail = (id) => {
     return fetch('http://localhost:3000/api/v1/trail?id=' + id, {
@@ -33,10 +32,6 @@ function SavedCard(props) {
   }
 
   const removeFromFavorites = (propsId) => {
-    const foundTrail = trails.find(trail => trail.id === propsId)
-    const existingTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
-    console.log('propsId: ', propsId)
-    console.log('currentUserId: ', currentUser.id)
       deleteFromFavorites(propsId, currentUser.id)
       .then(() => getUser(currentUser.id))
       .then(() => document.location.reload())

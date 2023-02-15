@@ -35,7 +35,7 @@ function Card(props) {
     const foundTrail = trails.find(trail => trail.id === propsId)
     const dupeTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
     if(dupeTrails.length === 0) {
-      postToFavorites(foundTrail, currentUser.id)
+      postToFavorites(propsId, currentUser.id)
       .then(() => getUser(currentUser.id))
         //dispatch(saveUserTrail(foundTrail));
     } else {
