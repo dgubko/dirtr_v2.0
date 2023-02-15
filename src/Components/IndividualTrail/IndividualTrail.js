@@ -2,9 +2,8 @@ import React from 'react'
 import AboutButton from '../AboutButton/AboutButton'
 import './IndividualTrail.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-import { setTrail, setUser } from "../../actions";
-import { postToFavorites } from "../../utilis/apiCalls"
+import { setUser } from "../../actions";
+import { getSingleUser, postToFavorites } from "../../utilities/apiCalls"
 
 function IndividualTrail() {
   const selectedTrail = useSelector((state) => state.selectedTrail.data.attributes)
@@ -13,9 +12,7 @@ function IndividualTrail() {
   const dispatch = useDispatch();
 
   const getUser = (id) => {
-    return fetch('http://localhost:3000/api/v1/user?id=' + id, {
-    })
-      .then(response => response.json())
+    getSingleUser(id)
       .then(data => dispatch(setUser(data)))
       .catch(err => console.log(err))
   }
@@ -30,8 +27,6 @@ function IndividualTrail() {
       alert('dupe trail!')
     }
   }
-
-  //const favoritedTrailChecker = currentUser.attributes.trails.filter(trail => trail.id === selectedTrail.id)
 
   const favoriteButton=(<button className="favorite-button" onClick={() => addToFavorites(selectedTrail.id)}>
   <div className="heart-image-container" alt="favorite button" />

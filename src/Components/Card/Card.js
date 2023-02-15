@@ -1,9 +1,9 @@
-import React, { useReducer } from "react";
+import React from "react";
 import "./Card.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setTrail, setUser } from "../../actions";
-import { postToFavorites } from "../../utilis/apiCalls";
+import { getSingleTrail, getSingleUser, postToFavorites } from "../../utilities/apiCalls";
 
 function Card(props) {
   const county = useSelector((state) =>
@@ -14,9 +14,7 @@ function Card(props) {
   const dispatch = useDispatch();
 
   const selectTrail = (id) => {
-    return fetch('http://localhost:3000/api/v1/trail?id=' + id, {
-    })
-      .then(response => response.json())
+    return getSingleTrail(id)
       .then(data => dispatch(setTrail(data)))
       .catch(err => console.log(err))
   }
@@ -24,9 +22,7 @@ function Card(props) {
   const trails = useSelector((state) => state.trails);
 
   const getUser = (id) => {
-    return fetch('http://localhost:3000/api/v1/user?id=' + id, {
-    })
-      .then(response => response.json())
+    return getSingleUser(id)
       .then(data => dispatch(setUser(data)))
       .catch(err => console.log(err))
   }
@@ -37,7 +33,6 @@ function Card(props) {
     if(dupeTrails.length === 0) {
       postToFavorites(propsId, currentUser.id)
       .then(() => getUser(currentUser.id))
-        //dispatch(saveUserTrail(foundTrail));
     } else {
       alert('dupe trail!')
     }

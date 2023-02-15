@@ -9,9 +9,7 @@ import Welcome from "../Welcome/Welcome";
 import AboutUs from "../AboutUs/AboutUs";
 import AllTrails from "../AllTrails/AllTrails";
 import Login from "../Login/Login";
-import { getData } from "../../utilis/apiCalls";
-import { getAllTrails } from "../../apiCalls/getAllTrails";
-import { getAllCounties } from "../../apiCalls/getAllCounties";
+import { getAllUsers, getAllTrails, getAllCounties } from "../../utilities/apiCalls";
 import { saveAllTrails, saveAllCounties, assignUsers } from "../../actions";
 import { cleanData } from "../../utilities/cleanData";
 
@@ -21,7 +19,7 @@ function App() {
 
   useEffect(() => {
     Promise.all([
-      getData("http://localhost:3000/api/v1/users"),
+      getAllUsers(),
       getAllTrails(),
       getAllCounties(),
     ]).then(([usersData, trailsData, countiesData]) => {

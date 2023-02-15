@@ -1,12 +1,12 @@
 import React from 'react'
 import './AboutUs.css'
 import carGif from '../../assets/images/off-roading.gif'
-import { GITHUB_ROUTES } from '../../utilis/constants'
+import { GITHUB_ROUTES } from '../../utilities/constants'
 
 function AboutUs() {
   return (
     <div className='about-us'>
-      <h2>About Us View</h2>
+      <h2>About Us</h2>
       <div className='about-us-container'>
         <div>
           <p className='bio-text'>

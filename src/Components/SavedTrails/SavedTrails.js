@@ -3,10 +3,9 @@ import "./SavedTrails.css";
 import SavedCard from "../SavedCard/SavedCard";
 import { NavLink } from "react-router-dom";
 import AboutButton from "../AboutButton/AboutButton";
-import { getUserSavedTrails } from "../../apiCalls/getUserSavedTrails";
-import { useDispatch } from "react-redux";
+import { getSingleUser } from "../../utilities/apiCalls";
+import { useDispatch, useSelector } from "react-redux";
 import { saveAllUserTrails } from "../../actions";
-import { useSelector } from "react-redux";
 
 function SavedTrails() {
   const savedTrails = useSelector((state) => state.savedTrails);
@@ -14,19 +13,20 @@ function SavedTrails() {
   const id = useSelector((state) => state.selectedUser.data.id);
 
   useEffect(() => {
-    getUserSavedTrails(id).then(({ data }) => {
-      dispatch(saveAllUserTrails(data.attributes.trails));
-    });
+    getSingleUser(id)
+      .then(({ data }) => {
+        dispatch(saveAllUserTrails(data.attributes.trails));
+      });
   }, []);
 
-  if(savedTrails.length === 0) {
-    return(<div className="no-trails-message">
-        <h2 className="saved-trails-title">No trails saved. Go favorite some!</h2>
-          <NavLink to='/trails'>
-            <button className="view-all-trails">View All Trails</button>
-          </NavLink>
-        <AboutButton />
-      </div>)
+  if (savedTrails.length === 0) {
+    return (<div className="no-trails-message">
+      <h2 className="saved-trails-title">No trails saved. Go favorite some!</h2>
+      <NavLink to='/trails'>
+        <button className="view-all-trails">View All Trails</button>
+      </NavLink>
+      <AboutButton />
+    </div>)
   } else {
     return (
       <div className="saved-trails">
