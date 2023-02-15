@@ -25,7 +25,7 @@
 .title, .static-title {
   color: #ffffff;
   margin-left: 3vw;
-  font-size: 3.5vw;
+  font-size: 3.75vw;
   cursor: default;
 }
 
@@ -51,4 +51,56 @@
   transform: scale(1.2);
   transition: all ease-in-out 0.3s;
   -webkit-text-stroke: 0.008vw #ffffff;
+}
+
+.header-right {
+  width: 28%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.saved-page-button {
+  font-family:"Kanit";
+  font-size: 1.5vw;
+  color:#ffffff;
+  background-color: #f18b1c;
+  width: 10vw;
+  border-radius: .7vw;
+  margin-right: 1vw;
+}
+
+.account-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 1vw;
+}
+
+.welcome-user {
+  font-family:"Kanit";
+  font-size: 1.5vw;
+  color:#ffffff;
+  height: 1.75vw;
+  margin-top: -1vw;
+  cursor: default;
+}
+
+.sign-out {
+  height: 2vw;
+  font-size: 1vw;
+  font-family: "Kanit";
+  color:#ffffff;
+  background-color:#f18b1c;
+  border: none;
+  border-radius: .7vw;
+  margin-left: .5vw;
+  cursor: pointer;
+}
+
+.sign-out:hover, .saved-page-button:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all ease-in-out 0.3s;
+  background-color:#c87216;
 }

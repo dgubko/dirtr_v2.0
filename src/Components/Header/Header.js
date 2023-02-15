@@ -20,9 +20,9 @@ return (
                       <h1 className='title'>Dirt<span className='title-r'>r</span></h1>
                   </NavLink>
                   <div className='header-right'>
-                  <NavLink to="/saved_trails">
-                    <h1 className="about-button">Favorites</h1>
-                  </NavLink>
+                    <NavLink to="/saved_trails">
+                      <h1 className="saved-page-button">Favorites</h1>
+                    </NavLink>
                     <div className='account-section'>
                       <h1 className='welcome-user'>Welcome, {selectedUser.attributes.name !== 'signed-out' ? selectedUser.attributes.name : ''}</h1>
                       <NavLink to='/'>

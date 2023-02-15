@@ -84,6 +84,10 @@
   transition: all ease-in-out 0.3s;
 }
 
+.favorite-button:active, .delete-button:active {
+  background-color:#693d0d;
+}
+
 .heart-image-container {
   height: 3vw;
   width: 3vw;
