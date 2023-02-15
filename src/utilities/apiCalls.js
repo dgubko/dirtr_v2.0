@@ -1,12 +1,18 @@
-export const getData = (url) => {
-  return fetch(url, {
-  })
-    .then(response => response.json())
-    .catch(err => console.log(err))
-}
+import { API_ROUTE } from "./constants";
+
+// GET REQUESTS
+
+export const getAllUsers = async () => {
+  const url = `${API_ROUTE}/users`;
+  const response = await fetch(url);
+  if (response.status < 200 && response.status > 299) {
+    throw response;
+  }
+  return response.json();
+};
 
 export const getAllCounties = async () => {
-  const url = "http://localhost:3000/api/v1/counties";
+  const url = `${API_ROUTE}/counties`;
   const response = await fetch(url);
   if (response.status < 200 && response.status > 299) {
     throw response;
@@ -15,7 +21,7 @@ export const getAllCounties = async () => {
 };
 
 export const getAllTrails = async () => {
-  const url = "http://localhost:3000/api/v1/trails";
+  const url = `${API_ROUTE}/trails`;
   const response = await fetch(url);
   if (response.status < 200 && response.status > 299) {
     throw response;
@@ -23,17 +29,28 @@ export const getAllTrails = async () => {
   return response.json();
 };
 
-export const getUserSavedTrails = async (id) => {
-  const url = `http://localhost:3000/api/v1/user?id=${id}`;
+export const getSingleTrail = async (id) => {
+  const url = `${API_ROUTE}/trail?id=${id}`;
   const response = await fetch(url);
   if (response.status < 200 && response.status > 299) {
     throw response;
   }
   return response.json();
 };
+
+export const getSingleUser = async (id) => {
+  const url = `${API_ROUTE}/user?id=${id}`;
+  const response = await fetch(url);
+  if (response.status < 200 && response.status > 299) {
+    throw response;
+  }
+  return response.json();
+};
+
+// POST REQUEST
 
 export const postToFavorites = (newTrail, userId) => {
-  return fetch("http://localhost:3000/api/v1/user-trails", {
+  return fetch(`${API_ROUTE}/user-trails`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -46,8 +63,10 @@ export const postToFavorites = (newTrail, userId) => {
     .then(response => response.json())
 }
 
+// DELETE REQUEST
+
 export const deleteFromFavorites = (trailId, userId) => {
-  return fetch("http://localhost:3000/api/v1/user-trails", {
+  return fetch(`${API_ROUTE}/user-trails`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json"
