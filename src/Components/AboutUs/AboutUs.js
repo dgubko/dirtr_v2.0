@@ -6,7 +6,7 @@ import { GITHUB_ROUTES } from '../../utilis/constants'
 function AboutUs() {
   return (
     <div className='about-us'>
-      <h2>About Us View</h2>
+      <h2>About Us</h2>
       <div className='about-us-container'>
         <div>
           <p className='bio-text'>

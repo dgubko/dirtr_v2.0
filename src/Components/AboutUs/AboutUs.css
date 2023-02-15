@@ -2,6 +2,10 @@
   width: 80%;
 }
 
+.about-us > h2 {
+  font-size: 2.7rem;
+}
+
 .about-us-container {
   display: flex;
 }
