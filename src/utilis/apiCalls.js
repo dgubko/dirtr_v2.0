@@ -18,7 +18,7 @@ export const getData = (url) => {
     .then(response => response.json())
   }
 
-  export const deleteFromFavorites = (trail, userId) => {
+  export const deleteFromFavorites = (trailId, userId) => {
     return fetch("http://localhost:3000/api/v1/user-trails", {
       method: "DELETE",
       headers: {
@@ -26,7 +26,7 @@ export const getData = (url) => {
       },
       body: JSON.stringify( {
         "user_id": userId,
-        "trail_id": trail.id
+        "trail_id": trailId
       })
     })
     .then(response => response.json())

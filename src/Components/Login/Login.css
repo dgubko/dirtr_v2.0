@@ -31,7 +31,7 @@
   
   .user-button:hover, .enter-button:hover{
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: all ease-in-out 0.3s;
     background-color:#c87216;
   }

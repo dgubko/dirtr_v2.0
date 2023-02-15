@@ -35,6 +35,8 @@ function SavedCard(props) {
   const removeFromFavorites = (propsId) => {
     const foundTrail = trails.find(trail => trail.id === propsId)
     const existingTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
+    console.log('propsId: ', propsId)
+    console.log('currentUserId: ', currentUser.id)
       deleteFromFavorites(propsId, currentUser.id)
       .then(() => getUser(currentUser.id))
       .then(() => document.location.reload())
