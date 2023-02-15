@@ -1,0 +1,37 @@
+.Login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 40%;
+  }
+
+.user-button, .enter-button {
+    height: 3vw;
+    width: 12vw;
+    font-size: 1.5vw;
+    font-family: "Kanit";
+    color:#ffffff;
+    background-color:#f18b1c;
+    border: none;
+    border-radius: .7vw;
+    margin: .5vw;
+    cursor: pointer;
+  }
+
+  .enter-button {
+    margin-top: 6vw;
+  }
+  
+  .user-button:hover, .enter-button:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all ease-in-out 0.3s;
+    background-color:#c87216;
+  }
