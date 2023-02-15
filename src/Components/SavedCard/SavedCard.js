@@ -38,6 +38,7 @@ function SavedCard(props) {
     if(existingTrails.length > 0) {
       deleteFromFavorites(foundTrail, currentUser.id)
       .then(() => getUser(currentUser.id))
+      .then(() => document.location.reload())
     }
   }
 

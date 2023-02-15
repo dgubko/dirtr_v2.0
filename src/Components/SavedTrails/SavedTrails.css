@@ -4,6 +4,27 @@
 }
 
 .saved-trails-card-container {
-  display: flex;
-  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1200px;
+  margin: auto;
+}
+
+.view-all-trails {
+  height: 2vw;
+  font-size: 1vw;
+  font-family: "Kanit";
+  color:#ffffff;
+  background-color:#f18b1c;
+  border: none;
+  border-radius: .7vw;
+  margin-left: .5vw;
+  cursor: pointer;
+}
+
+.view-all-trails:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all ease-in-out 0.3s;
+  background-color:#c87216;
 }
