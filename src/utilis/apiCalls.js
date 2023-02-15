@@ -30,4 +30,6 @@ export const getData = (url) => {
       })
     })
     .then(response => response.json())
+    .then(() => console.log('delete call sent!'))
+    .catch(err => console.log(err))
   }

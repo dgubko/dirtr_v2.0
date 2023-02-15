@@ -1,11 +1,12 @@
 import React, { useReducer } from "react";
-import "./Card.css";
+import "../Card/Card.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setTrail, setUser } from "../../actions";
-import { postToFavorites } from "../../utilis/apiCalls";
+import { deleteFromFavorites } from "../../utilis/apiCalls";
 
-function Card(props) {
+function SavedCard(props) {
+  const savedTrails = useSelector((state) => state.savedTrails);
   const county = useSelector((state) =>
     state.counties.find((county) => {
       return county.id === props.countyId.toFixed();
@@ -31,17 +32,15 @@ function Card(props) {
       .catch(err => console.log(err))
   }
 
-  const addToFavorites = (propsId) => {
+  const removeFromFavorites = (propsId) => {
     const foundTrail = trails.find(trail => trail.id === propsId)
-    const dupeTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
-    if(dupeTrails.length === 0) {
-      postToFavorites(foundTrail, currentUser.id)
+    const existingTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
+    if(existingTrails.length > 0) {
+      deleteFromFavorites(foundTrail, currentUser.id)
       .then(() => getUser(currentUser.id))
-        //dispatch(saveUserTrail(foundTrail));
-    } else {
-      alert('dupe trail!')
     }
   }
+
   return (
     <div className="card">
       <NavLink to="/individual_trail">
@@ -61,15 +60,12 @@ function Card(props) {
       <div className="card-bottom">
         <p className="trail-difficulty">{props.difficulty}</p>
         <p className="trail-distance">{props.distance} miles</p>
-        <button
-          className="favorite-button"
-          onClick={() => addToFavorites(props.id)}
-        >
-          <div className="heart-image-container" alt="favorite button" />
+        <button className="delete-button" onClick={() => removeFromFavorites(props.id)}>
+            <div className="trash-image-container" alt="delete button" />
         </button>
       </div>
     </div>
   );
 }
 
-export default Card
+export default SavedCard

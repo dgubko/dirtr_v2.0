@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./SavedTrails.css";
-import Card from "../Card/Card";
+import SavedCard from "../SavedCard/SavedCard";
 import { getUserSavedTrails } from "../../apiCalls/getUserSavedTrails";
 import { useDispatch } from "react-redux";
 import { saveAllUserTrails } from "../../actions";
@@ -24,7 +24,7 @@ function SavedTrails() {
       <div className="saved-trails-card-container">
         {savedTrails.map((trail) => {
           return (
-            <Card
+            <SavedCard
               key={trail.id}
               id={trail.id}
               name={trail.name}

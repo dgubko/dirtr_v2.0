@@ -64,7 +64,7 @@
   border-bottom-right-radius: .7vw;
 }
 
-.favorite-button {
+.favorite-button, .delete-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +78,7 @@
   margin-right: -3.5vw;
 }
 
-.favorite-button:hover {
+.favorite-button:hover, .delete-button:hover {
   cursor: pointer;
   transform: scale(1.2);
   transition: all ease-in-out 0.3s;
@@ -88,6 +88,15 @@
   height: 3vw;
   width: 3vw;
   background-image: url("../../assets/images/icons8-favorite-90.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.trash-image-container {
+  height: 3vw;
+  width: 3vw;
+  background-image: url("../../assets/images/icons8-delete-trash-100.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
