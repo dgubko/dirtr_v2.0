@@ -1,0 +1,14 @@
+.bad-url-msg {
+  font-family:"Kanit";
+  font-size: 2.5vw;
+}
+
+.return-home-button {
+  font-family:"Kanit";
+  font-size: 1.5vw;
+  color:#ffffff;
+  background-color: #f18b1c;
+  width: 10vw;
+  border-radius: .7vw;
+  margin-right: 1vw;
+}
