@@ -30,7 +30,7 @@ export const Form = () => {
           onChange={handleChange}
           value={currentParams.difficulty || ""}
         >
-          <option value="">All difficulties</option>
+          <option value="">All Difficulties</option>
           <option value="green">Green</option>
           <option value="blue">Blue</option>
           <option value="black">Black</option>

@@ -35,15 +35,13 @@ function SavedCard(props) {
   const removeFromFavorites = (propsId) => {
     const foundTrail = trails.find(trail => trail.id === propsId)
     const existingTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
-    if(existingTrails.length > 0) {
-      deleteFromFavorites(foundTrail, currentUser.id)
+      deleteFromFavorites(propsId, currentUser.id)
       .then(() => getUser(currentUser.id))
       .then(() => document.location.reload())
-    }
   }
 
   return (
-    <div className="card">
+    <div className="card" id={props.id}>
       <NavLink to="/individual_trail">
         <div className="card-top" onClick={() => selectTrail(props.id)}>
           <img
