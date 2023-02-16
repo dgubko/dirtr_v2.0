@@ -32,7 +32,7 @@
 .description-bottom {
   background-color: #242323;
   color:#ffffff;
-  font-size: 1.vw;
+  font-size: 1.1vw;
   border: .21vw solid #cdcdcd;
   border-radius: .7vw;
   padding: 1vw;
@@ -45,4 +45,5 @@
 
 .trail-overview {
   text-align: left;
+
 }
