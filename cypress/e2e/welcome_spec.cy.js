@@ -10,7 +10,7 @@ describe('Welcome Page User Flow', () => {
     cy.intercept('https://murmuring-cliffs-65490.herokuapp.com/api/v1/user?id=3')
     cy.intercept('https://murmuring-cliffs-65490.herokuapp.com/api/v1/counties')
     cy.intercept('https://murmuring-cliffs-65490.herokuapp.com/api/v1/users')
-    cy.visit('http://localhost:3001/')
+    cy.visit('http://localhost:3000/')
     cy.get('.user-button').eq(2).click()
     cy.get('.enter-button').click()
   })
