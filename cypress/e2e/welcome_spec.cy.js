@@ -44,22 +44,22 @@ describe("Welcome Page User Flow", () => {
 
   it("Should be able to navigate to favorites page and back", () => {
     cy.get(".saved-page-button").click();
-    cy.url().should("eq", "http://localhost:3001/saved_trails");
+    cy.url().should("eq", "http://localhost:3000/saved_trails");
     cy.get(".title").click();
-    cy.url().should("eq", "http://localhost:3001/home");
+    cy.url().should("eq", "http://localhost:3000/home");
   });
 
   it("Should be able to navigate to about page and back", () => {
     cy.get(".about-button").click();
-    cy.url().should("eq", "http://localhost:3001/about");
+    cy.url().should("eq", "http://localhost:3000/about");
     cy.get(".title").click();
-    cy.url().should("eq", "http://localhost:3001/home");
+    cy.url().should("eq", "http://localhost:3000/home");
   });
 
   it("Should be able to navigate to all trails page and back", () => {
     cy.get(".button-welcome").click();
-    cy.url().should("eq", "http://localhost:3001/trails");
+    cy.url().should("eq", "http://localhost:3000/trails");
     cy.get(".title").click();
-    cy.url().should("eq", "http://localhost:3001/home");
+    cy.url().should("eq", "http://localhost:3000/home");
   });
 });
