@@ -30,27 +30,15 @@
 
 ### Visual Demo
 
-(Visual Demo will go here when complete!)
+![Brief features gif](https://media.giphy.com/media/3AcrClXJiZACTWMLko/giphy.gif)
 
-### Set Up
-1. Clone the repo
-   ```sh
-   git clone git@github.com:DirtR2208/dirtr2208_fe.git
-   ```
-2. Install NPM packages and start server
-   ```sh
-   npm install
-   npm start
-   ``` 
-3. Clone the API from the repo 
-   ```sh
-   git clone (????)
-   ```
-4. CD into the API directory and start the local server
-   ```sh
-   (?????)
-   ```
-5. Explore the website
+### Deployed App
+
+https://dirtr2208-fe.vercel.app/
+
+or
+
+https://dirtr.netlify.app/
 
 ## Sources
   - [MDN](http://developer.mozilla.org/en-US/)
