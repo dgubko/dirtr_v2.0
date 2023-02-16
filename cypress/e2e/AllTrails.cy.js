@@ -15,7 +15,7 @@ describe("AllTrails", () => {
       "POST",
       "https://murmuring-cliffs-65490.herokuapp.com/api/v1/user-trails"
     );
-    cy.visit("https://dirtr2208-fe.vercel.app/");
+    cy.visit("http://localhost:3000");
     cy.get(".user-button").eq(1).click();
     cy.get(".enter-button").click();
     cy.get(".button-welcome").click();
