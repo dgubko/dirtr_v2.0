@@ -1,7 +1,7 @@
 # Dirtr
 
 ## Abstract
-  - Dirtr is an application which simulates users, allows you to take control of a user account, and utilize an app to find/favorite offroading trails in Colorado. This project is our final group project at Turing, working alongside backenders to make a truly from-scratch full-stack app. This is purely the Front End repo.
+  - Dirtr is an application which simulates users, allows you to take control of a user account, and utilize an app to find/favorite offroading trails in Colorado. This project is our final group project at Turing, working alongside backenders to make a truly from-scratch full-stack app. This is purely the Front End repo; the Back End repo can be found [here](https://github.com/DirtR2208/DirtR_2208_BE).
 
 ## Technologies
 - ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
@@ -29,6 +29,8 @@
 
 
 ### Visual Demo
+
+The original concept was based on [this wireframe](https://github.com/orgs/DirtR2208/projects/1/views/1?pane=issue&itemId=19452680).
 
 ![Brief features gif](https://media.giphy.com/media/3AcrClXJiZACTWMLko/giphy.gif)
 
