@@ -10,8 +10,16 @@ import AboutUs from "../AboutUs/AboutUs";
 import AllTrails from "../AllTrails/AllTrails";
 import Login from "../Login/Login";
 import BadUrl from "../BadUrl/BadUrl";
-import { getAllUsers, getAllTrails, getAllCounties } from "../../utilities/apiCalls";
-import { saveAllTrails, saveAllCounties, assignUsers } from "../../actions";
+import {
+  getAllUsers,
+  getAllTrails,
+  getAllCounties,
+} from "../../utilities/apiCalls";
+import {
+  saveAllTrails,
+  saveAllCounties,
+  assignUsers,
+} from "../../store/actions";
 import { cleanData } from "../../utilities/cleanData";
 
 function App() {
@@ -19,15 +27,13 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Promise.all([
-      getAllUsers(),
-      getAllTrails(),
-      getAllCounties(),
-    ]).then(([usersData, trailsData, countiesData]) => {
-      dispatch(assignUsers(usersData));
-      dispatch(saveAllTrails(cleanData(trailsData)));
-      dispatch(saveAllCounties(cleanData(countiesData)));
-    });
+    Promise.all([getAllUsers(), getAllTrails(), getAllCounties()]).then(
+      ([usersData, trailsData, countiesData]) => {
+        dispatch(assignUsers(usersData));
+        dispatch(saveAllTrails(cleanData(trailsData)));
+        dispatch(saveAllCounties(cleanData(countiesData)));
+      }
+    );
   }, []);
 
   return (
