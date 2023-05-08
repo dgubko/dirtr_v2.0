@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const AllTrails = () => {
   const trails = useSelector((state) => state.trails);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const currentParams = Object.fromEntries([...searchParams]);
 
   const filtered = trails.filter((trail) => {

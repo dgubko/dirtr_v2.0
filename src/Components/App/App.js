@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import SavedTrails from "../SavedTrails/SavedTrails";
 import IndividualTrail from "../IndividualTrail/IndividualTrail";
 import Header from "../Header/Header";
@@ -23,7 +23,6 @@ import {
 import { cleanData } from "../../utilities/cleanData";
 
 function App() {
-  const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -40,8 +39,8 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Welcome />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/trails" element={<AllTrails />} />
         <Route path="/saved_trails" element={<SavedTrails />} />
         <Route path="/individual_trail" element={<IndividualTrail />} />

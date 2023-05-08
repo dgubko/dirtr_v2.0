@@ -51,7 +51,7 @@ function Card(props) {
           <img
             src={props.image}
             className="scenery-image"
-            alt="scenery image"
+            alt={`scenery of ${props.name} trail`}
           />
           <div className="trail-county-container">
             <p className="trail-name">{props.name}</p>
