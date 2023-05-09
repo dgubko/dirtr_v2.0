@@ -2,8 +2,12 @@ import React from "react";
 import "./Card.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setTrail, setUser } from "../../actions";
-import { getSingleTrail, getSingleUser, postToFavorites } from "../../utilities/apiCalls";
+import { setTrail, setUser } from "../../store/actions";
+import {
+  getSingleTrail,
+  getSingleUser,
+  postToFavorites,
+} from "../../utilities/apiCalls";
 
 function Card(props) {
   const county = useSelector((state) =>
@@ -15,28 +19,31 @@ function Card(props) {
 
   const selectTrail = (id) => {
     return getSingleTrail(id)
-      .then(data => dispatch(setTrail(data)))
-      .catch(err => console.log(err))
-  }
+      .then((data) => dispatch(setTrail(data)))
+      .catch((err) => console.log(err));
+  };
   const currentUser = useSelector((state) => state.selectedUser.data);
   const trails = useSelector((state) => state.trails);
 
   const getUser = (id) => {
     return getSingleUser(id)
-      .then(data => dispatch(setUser(data)))
-      .catch(err => console.log(err))
-  }
+      .then((data) => dispatch(setUser(data)))
+      .catch((err) => console.log(err));
+  };
 
   const addToFavorites = (propsId) => {
-    const foundTrail = trails.find(trail => trail.id === propsId)
-    const dupeTrails = currentUser.attributes.trails.filter(trail => trail.id === foundTrail.id)
-    if(dupeTrails.length === 0) {
-      postToFavorites(propsId, currentUser.id)
-      .then(() => getUser(currentUser.id))
+    const foundTrail = trails.find((trail) => trail.id === propsId);
+    const dupeTrails = currentUser.attributes.trails.filter(
+      (trail) => trail.id === foundTrail.id
+    );
+    if (dupeTrails.length === 0) {
+      postToFavorites(propsId, currentUser.id).then(() =>
+        getUser(currentUser.id)
+      );
     } else {
-      alert('dupe trail!')
+      alert("dupe trail!");
     }
-  }
+  };
   return (
     <div className="card">
       <NavLink to="/individual_trail">
@@ -44,7 +51,7 @@ function Card(props) {
           <img
             src={props.image}
             className="scenery-image"
-            alt="scenery image"
+            alt={`scenery of ${props.name} trail`}
           />
           <div className="trail-county-container">
             <p className="trail-name">{props.name}</p>
@@ -67,4 +74,4 @@ function Card(props) {
   );
 }
 
-export default Card
+export default Card;

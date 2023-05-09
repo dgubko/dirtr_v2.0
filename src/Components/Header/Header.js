@@ -1,10 +1,10 @@
-import "./Header.css";
+import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
-import { logOut, setUser } from "../../actions";
+import { logOut, setUser } from "../../store/actions";
 import { useSelector, useDispatch } from "react-redux";
 
 const Header = () => {
-  const loginBoolean = useSelector((state) => state.isLogged);
+  const isLogged = useSelector((state) => state.isLogged);
   const selectedUser = useSelector((state) => state.selectedUser.data);
   const dispatch = useDispatch();
   const signOut = () => {
@@ -12,39 +12,47 @@ const Header = () => {
     dispatch(setUser({ data: { attributes: { name: "signed-out" } } }));
   };
 
-  if (loginBoolean) {
-    return (
-      <div className='Header'>
-        <div className='banner'>
-          <NavLink to='/home'>
-            <h1 className='title'>Dirt<span className='title-r'>r</span></h1>
+  const checkIsActive = ({ isActive }) =>
+    isActive ? styles.activelink : styles.navlink;
+
+  return (
+    <header className={styles.header}>
+      <div className={styles.banner}>
+        <NavLink to="/" className={styles.logo}>
+          Dirt<span>r</span>
+        </NavLink>
+      </div>
+      <nav className={styles.navigation}>
+        <NavLink className={checkIsActive} to="/trails">
+          All Trails
+        </NavLink>
+        {isLogged && (
+          <NavLink className={checkIsActive} to="/saved_trails">
+            Favorites
           </NavLink>
-          <div className='header-right'>
-            <NavLink to="/saved_trails">
-              <h1 className="saved-page-button">Favorites</h1>
-            </NavLink>
-            <div className='account-section'>
-              <h1 className='welcome-user'>Welcome, {selectedUser.attributes.name !== 'signed-out' ? selectedUser.attributes.name : ''}</h1>
-              <NavLink to='/'>
-                <button className='sign-out' onClick={() => signOut()}>Sign Out</button>
-              </NavLink>
-            </div>
-          </div>
+        )}
+        <NavLink to="/about" className={checkIsActive}>
+          About Us
+        </NavLink>
+      </nav>
+      {isLogged ? (
+        <div className={styles.account}>
+          <p>
+            Welcome, <strong>{selectedUser.attributes.name}</strong>
+          </p>
+          <NavLink to="/">
+            <button className="sign-out" onClick={() => signOut()}>
+              Sign Out
+            </button>
+          </NavLink>
         </div>
-      </div>
-    );
-  }
-  if (!loginBoolean) {
-    return (
-      <div className="Header">
-        <div className="login-banner">
-          <h1 className="static-title">
-            Dirt<span className="static-title-r">r</span>
-          </h1>
-        </div>
-      </div>
-    );
-  }
+      ) : (
+        <NavLink to="/login" className="button secondary-button">
+          Sign In
+        </NavLink>
+      )}
+    </header>
+  );
 };
 
 export default Header;

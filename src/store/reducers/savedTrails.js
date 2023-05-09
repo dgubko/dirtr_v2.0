@@ -1,4 +1,4 @@
-export const savedTrails = (state = [], action) => {
+export const savedTrailsReducer = (state = [], action) => {
   switch (action.type) {
     case "SAVE_ALL_USER_TRAILS":
       return action.payload;
