@@ -22,7 +22,11 @@ function Card(props) {
       .then((data) => dispatch(setTrail(data)))
       .catch((err) => console.log(err));
   };
-  const currentUser = useSelector((state) => state.selectedUser.data);
+  const { currentUser, isLogged } = useSelector((state) => ({
+    currentUser: state.selectedUser.data,
+    isLogged: state.isLogged,
+  }));
+
   const trails = useSelector((state) => state.trails);
 
   const getUser = (id) => {
@@ -63,12 +67,14 @@ function Card(props) {
       <div className="card-bottom">
         <p className="trail-difficulty">{props.difficulty}</p>
         <p className="trail-distance">{props.distance} miles</p>
-        <button
-          className="favorite-button"
-          onClick={() => addToFavorites(props.id)}
-        >
-          <div className="heart-image-container" alt="favorite button" />
-        </button>
+        {isLogged && (
+          <button
+            className="favorite-button"
+            onClick={() => addToFavorites(props.id)}
+          >
+            <div className="heart-image-container" alt="favorite button" />
+          </button>
+        )}
       </div>
     </div>
   );

@@ -9,7 +9,10 @@ function IndividualTrail() {
   const selectedTrail = useSelector(
     (state) => state.selectedTrail.data.attributes
   );
-  const currentUser = useSelector((state) => state.selectedUser.data);
+  const { currentUser, isLogged } = useSelector((state) => ({
+    currentUser: state.selectedUser.data,
+    isLogged: state.isLogged,
+  }));
   const trails = useSelector((state) => state.trails);
   const dispatch = useDispatch();
 
@@ -47,7 +50,7 @@ function IndividualTrail() {
       <h2 className="individual-trail-name">{selectedTrail.name}</h2>
       <div className="description-top">
         <div className="description-top-left">
-          {favoriteButton}
+          {isLogged && favoriteButton}
           <div className="description-top-left-box">
             <p className="trail-distance">
               Distance: {selectedTrail.distance} miles
