@@ -1,24 +1,14 @@
 import React, { useEffect } from "react";
 import "./SavedTrails.css";
-import SavedCard from "../SavedCard/SavedCard";
+import Card from "../Card/Card";
 import { NavLink } from "react-router-dom";
 import AboutButton from "../AboutButton/AboutButton";
-import { getSingleUser } from "../../utilities/apiCalls";
-import { useDispatch, useSelector } from "react-redux";
-import { saveAllUserTrails } from "../../store/actions";
+import { useSelector } from "react-redux";
 
 function SavedTrails() {
-  const savedTrails = useSelector((state) => state.savedTrails);
-  const dispatch = useDispatch();
-  const id = useSelector((state) => state.selectedUser.data.id);
+  const savedTrails = useSelector((state) => state.favoriteTrails);
 
-  useEffect(() => {
-    getSingleUser(id).then(({ data }) => {
-      dispatch(saveAllUserTrails(data.attributes.trails));
-    });
-  }, []);
-
-  if (savedTrails.length === 0) {
+  if (!savedTrails.length) {
     return (
       <div className="no-trails-message">
         <h2 className="saved-trails-title">
@@ -37,7 +27,7 @@ function SavedTrails() {
         <div className="saved-trails-card-container">
           {savedTrails.map((trail) => {
             return (
-              <SavedCard
+              <Card
                 key={trail.id}
                 id={trail.id}
                 name={trail.name}
