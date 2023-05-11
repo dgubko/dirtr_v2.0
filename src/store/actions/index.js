@@ -45,3 +45,18 @@ export const saveUserTrail = (data) => ({
   type: "SAVE_USER_TRAIL",
   payload: data,
 });
+
+export const addAllFavorites = (data) => ({
+  type: "ADD_ALL_FAVORITES",
+  payload: data,
+});
+
+export const addToFavorites = (data) => ({
+  type: "ADD_TO_FAVORITES",
+  payload: data,
+});
+
+export const removeFromFavorites = (data) => ({
+  type: "REMOVE_FROM_FAVORITES",
+  payload: data,
+});

@@ -6,6 +6,7 @@ import { usersReducer } from "./users";
 import { selectedUserReducer } from "./selectedUser";
 import { selectedTrailReducer } from "./selectedTrail";
 import { savedTrailsReducer } from "./savedTrails";
+import { favoriteTrailsReducer } from "./favoriteTrails";
 
 const rootReducer = combineReducers({
   isLogged: loggedReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   counties: countiesReducer,
   users: usersReducer,
   selectedUser: selectedUserReducer,
+  favoriteTrails: favoriteTrailsReducer,
   selectedTrail: selectedTrailReducer,
   savedTrails: savedTrailsReducer,
 });
