@@ -1,57 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css";
 import { NavLink } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { setTrail, setUser } from "../../store/actions";
-import {
-  getSingleTrail,
-  getSingleUser,
-  postToFavorites,
-} from "../../utilities/apiCalls";
+import { useSelector } from "react-redux";
+import { postToFavorites, deleteFromFavorites } from "../../utilities/apiCalls";
 
 function Card(props) {
-  const county = useSelector((state) =>
-    state.counties.find((county) => {
-      return county.id === props.countyId.toFixed();
+  const { county, currentUserId, isLogged, favoriteTrails } = useSelector(
+    (state) => ({
+      county: state.counties.find(
+        (county) => county.id === props.countyId.toFixed()
+      ),
+      currentUserId: state.selectedUser && state.selectedUser.id,
+      isLogged: state.session.isLogged,
+      favoriteTrails: state.favoriteTrails,
     })
   );
-  const dispatch = useDispatch();
 
-  const selectTrail = (id) => {
-    return getSingleTrail(id)
-      .then((data) => dispatch(setTrail(data)))
-      .catch((err) => console.log(err));
-  };
-  const { currentUser, isLogged } = useSelector((state) => ({
-    currentUser: state.selectedUser.data,
-    isLogged: state.isLogged,
-  }));
+  const [error, setError] = useState(null);
 
-  const trails = useSelector((state) => state.trails);
+  const isFavorite = favoriteTrails.find((trail) => trail.id === props.id);
 
-  const getUser = (id) => {
-    return getSingleUser(id)
-      .then((data) => dispatch(setUser(data)))
-      .catch((err) => console.log(err));
-  };
-
-  const addToFavorites = (propsId) => {
-    const foundTrail = trails.find((trail) => trail.id === propsId);
-    const dupeTrails = currentUser.attributes.trails.filter(
-      (trail) => trail.id === foundTrail.id
-    );
-    if (dupeTrails.length === 0) {
-      postToFavorites(propsId, currentUser.id).then(() =>
-        getUser(currentUser.id)
+  const toggleFavorites = () => {
+    if (!isFavorite) {
+      postToFavorites(props.id, currentUserId).catch((err) =>
+        setError({
+          action: "Add to favorite",
+          message: err.message,
+        })
       );
     } else {
-      alert("dupe trail!");
+      deleteFromFavorites(props.id, currentUserId).catch((err) =>
+        setError({
+          action: "Remove from favorite",
+          message: err.message,
+        })
+      );
     }
   };
+
   return (
     <div className="card">
-      <NavLink to="/individual_trail">
-        <div className="card-top" onClick={() => selectTrail(props.id)}>
+      {error && (
+        <p className="error-message">{`Error occur on action "${error.action}": ${error.message}`}</p>
+      )}
+      <NavLink to={`/individual_trail/${props.id}`}>
+        <div className="card-top">
           <img
             src={props.image}
             className="scenery-image"
@@ -68,10 +61,7 @@ function Card(props) {
         <p className="trail-difficulty">{props.difficulty}</p>
         <p className="trail-distance">{props.distance} miles</p>
         {isLogged && (
-          <button
-            className="favorite-button"
-            onClick={() => addToFavorites(props.id)}
-          >
+          <button className="favorite-button" onClick={toggleFavorites}>
             <div className="heart-image-container" alt="favorite button" />
           </button>
         )}

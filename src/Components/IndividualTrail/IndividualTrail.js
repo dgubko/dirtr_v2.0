@@ -6,12 +6,16 @@ import { setUser } from "../../store/actions";
 import { getSingleUser, postToFavorites } from "../../utilities/apiCalls";
 
 function IndividualTrail() {
+  // return getSingleTrail(id)
+  //   .then((data) => dispatch(setTrail(data)))
+  //   .catch((err) => console.log(err));
+
   const selectedTrail = useSelector(
     (state) => state.selectedTrail.data.attributes
   );
   const { currentUser, isLogged } = useSelector((state) => ({
     currentUser: state.selectedUser.data,
-    isLogged: state.isLogged,
+    isLogged: state.session.isLogged,
   }));
   const trails = useSelector((state) => state.trails);
   const dispatch = useDispatch();
