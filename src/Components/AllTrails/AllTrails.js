@@ -1,6 +1,5 @@
 import "./AllTrails.css";
 import Card from "../Card/Card";
-import AboutButton from "../AboutButton/AboutButton";
 import { Form } from "../Form/Form";
 import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -22,8 +21,8 @@ const AllTrails = () => {
   });
 
   return (
-    <div>
-      <h1>Trails</h1>
+    <div className="all-trail-page">
+      <h1>All Trails</h1>
       <Form />
       {!trails.length ? (
         <p>Could not load trails</p>
@@ -45,7 +44,6 @@ const AllTrails = () => {
           );
         })}
       </div>
-      <AboutButton />
     </div>
   );
 };

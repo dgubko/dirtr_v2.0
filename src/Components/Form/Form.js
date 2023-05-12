@@ -14,7 +14,7 @@ export const Form = () => {
 
   return (
     <div>
-      <form>
+      <form className="filter-form">
         <input
           className="name-field"
           id="name"

@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./SavedTrails.css";
 import Card from "../Card/Card";
 import { NavLink } from "react-router-dom";
-import AboutButton from "../AboutButton/AboutButton";
 import { useSelector } from "react-redux";
 
 function SavedTrails() {
@@ -17,7 +16,6 @@ function SavedTrails() {
         <NavLink to="/trails">
           <button className="view-all-trails">View All Trails</button>
         </NavLink>
-        <AboutButton />
       </div>
     );
   } else {
@@ -39,7 +37,6 @@ function SavedTrails() {
             );
           })}
         </div>
-        <AboutButton />
       </div>
     );
   }

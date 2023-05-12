@@ -1,5 +1,4 @@
 import React from "react";
-import AboutButton from "../AboutButton/AboutButton";
 import "./IndividualTrail.css";
 import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../../store/actions";
@@ -82,7 +81,6 @@ function IndividualTrail() {
       <div className="description-bottom">
         <p className="trail-overview">{selectedTrail.description}</p>
       </div>
-      <AboutButton />
     </div>
   );
 }

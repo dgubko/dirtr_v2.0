@@ -1,6 +1,17 @@
+.all-trail-page {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2.5rem;
+  margin: auto;
+}
+
+.all-trail-page h1 {
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
 .all-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 1200px;
-  margin: auto;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }

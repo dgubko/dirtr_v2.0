@@ -32,7 +32,8 @@ function App() {
   useEffect(() => {
     Promise.all([getAllUsers(), getAllTrails(), getAllCounties()]).then(
       ([usersData, trailsData, countiesData]) => {
-        dispatch(assignUsers(usersData));
+        console.log(usersData, trailsData, countiesData);
+        dispatch(assignUsers(cleanData(usersData)));
         dispatch(saveAllTrails(cleanData(trailsData)));
         dispatch(saveAllCounties(cleanData(countiesData)));
       }
