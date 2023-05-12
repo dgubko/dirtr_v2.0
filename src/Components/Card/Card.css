@@ -1,7 +1,4 @@
 .card {
-  width: 25vw;
-  height: 14vw;
-  margin: 1.5vw;
   display: flex;
   flex-direction: column;
   font-size: 1.4vw;
@@ -11,30 +8,30 @@
 .card-top {
   display: flex;
   color: #000000;
-  border-top: .21vw solid #cdcdcd;
-  border-right: .21vw solid #cdcdcd;
-  border-left: .21vw solid #cdcdcd;
-  border-top-left-radius: .7vw;
-  border-top-right-radius: .7vw;
+  border-top: 0.21vw solid #cdcdcd;
+  border-right: 0.21vw solid #cdcdcd;
+  border-left: 0.21vw solid #cdcdcd;
+  border-top-left-radius: 0.7vw;
+  border-top-right-radius: 0.7vw;
   background-color: #fffff8;
   cursor: pointer;
 }
 
 .card-top:hover {
-  border-top: .21vw solid #f18b1c;
-  border-right: .21vw solid #f18b1c;
-  border-left: .21vw solid #f18b1c;
+  border-top: 0.21vw solid #f18b1c;
+  border-right: 0.21vw solid #f18b1c;
+  border-left: 0.21vw solid #f18b1c;
 }
 
 .card-top:hover > .trail-county-container {
   transform: scale(1.1);
   transition: all ease-in-out 0.3s;
-}  
+}
 
 .scenery-image {
   height: 10vw;
   width: 12.5vw;
-  border-top-left-radius: .5vw;;
+  border-top-left-radius: 0.5vw;
 }
 
 .trail-county-container {
@@ -49,8 +46,8 @@
 
 .divider-bar {
   background-color: #cdcdcd;
-  height: .1vw;
-  margin-left: .1vw;
+  height: 0.1vw;
+  margin-left: 0.1vw;
 }
 
 .card-bottom {
@@ -58,17 +55,18 @@
   justify-content: space-around;
   align-items: center;
   height: 4vw;
-  color:#ffffff;
-  background-color:#5e2222;
-  border-bottom-left-radius: .7vw;
-  border-bottom-right-radius: .7vw;
+  color: #ffffff;
+  background-color: #5e2222;
+  border-bottom-left-radius: 0.7vw;
+  border-bottom-right-radius: 0.7vw;
 }
 
-.favorite-button, .delete-button {
+.favorite-button,
+.delete-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#f18b1c;
+  background-color: #f18b1c;
   height: 4.5vw;
   width: 4.5vw;
   border: none;
@@ -78,14 +76,16 @@
   margin-right: -3.5vw;
 }
 
-.favorite-button:hover, .delete-button:hover {
+.favorite-button:hover,
+.delete-button:hover {
   cursor: pointer;
   transform: scale(1.2);
   transition: all ease-in-out 0.3s;
 }
 
-.favorite-button:active, .delete-button:active {
-  background-color:#693d0d;
+.favorite-button:active,
+.delete-button:active {
+  background-color: #693d0d;
 }
 
 .heart-image-container {

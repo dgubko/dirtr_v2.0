@@ -21,8 +21,8 @@ const AllTrails = () => {
   });
 
   return (
-    <div>
-      <h1>Trails</h1>
+    <div className="all-trail-page">
+      <h1>All Trails</h1>
       <Form />
       {!trails.length ? (
         <p>Could not load trails</p>
