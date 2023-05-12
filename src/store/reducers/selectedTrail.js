@@ -1,7 +1,4 @@
-export const selectedTrailReducer = (
-  state = { data: { attributes: { name: "signed-out" } } },
-  action
-) => {
+export const selectedTrailReducer = (state = {}, action) => {
   switch (action.type) {
     case "SET_TRAIL":
       return action.payload;

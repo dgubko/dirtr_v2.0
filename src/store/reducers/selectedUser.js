@@ -1,9 +1,9 @@
-export const selectedUserReducer = (state = null, action) => {
+export const selectedUserReducer = (state = {}, action) => {
   switch (action.type) {
     case "SET_USER":
       return action.payload;
     case "SIGN_OUT":
-      return null;
+      return {};
     default:
       return state;
   }
